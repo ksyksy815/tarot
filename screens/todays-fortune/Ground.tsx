@@ -2,14 +2,16 @@
 
 import useResult from "@/hooks/useResult";
 import useShuffledCards from "@/hooks/useShuffledCards";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CardDeck from "./CardDeck";
 import Result from "./Result";
 import ShuffleButton from "./ShuffleButton";
 
-const Ground = () => {
-  const router = useRouter();
+type Props = {
+  type: "todays-fortune" | "do-or-dont" | "choices";
+};
+
+const Ground = ({ type }: Props) => {
   const { cards, getShuffledTarotCards } = useShuffledCards();
   const { chosenCards, updateSelectedCards } = useResult();
   const [isShuffled, setIsShuffled] = useState(false);
@@ -46,6 +48,16 @@ const Ground = () => {
     setSelectedCards(new Set());
   };
 
+  const showSeeResultButton = () => {
+    if (type === "todays-fortune") {
+      return selectedCards.size === 1;
+    }
+    if (type === "do-or-dont") {
+      return selectedCards.size === 2;
+    }
+    return selectedCards.size >= 2;
+  };
+
   return (
     <div className={`relativew-full h-full flex flex-col`}>
       {isShuffled ? (
@@ -59,7 +71,7 @@ const Ground = () => {
         <ShuffleButton onClick={handleClickShuffle} />
       )}
 
-      {selectedCards.size === 1 && (
+      {showSeeResultButton() && (
         <button
           className={`fixed top-1/2 left-1/2`}
           onClick={() => {

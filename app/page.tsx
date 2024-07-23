@@ -1,9 +1,10 @@
-import Select from "@/components/Select";
+import MainContextProvider from "@/screens/home/MainContextProvider";
+import StepManager from "@/screens/home/StepManager";
 
 export default function Home() {
   return (
-    <div className={`flex flex-col h-full w-full`}>
-      <Select />
-    </div>
+    <MainContextProvider>
+      <StepManager />
+    </MainContextProvider>
   );
 }
