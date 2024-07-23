@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`w-screen h-screen overflow-y-scroll ${inter.className} bg-[#242424] text-white p-16`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
