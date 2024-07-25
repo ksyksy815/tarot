@@ -1,19 +1,20 @@
 import { MainContext } from "@/screens/home/MainContextProvider";
 import Ground from "@/screens/todays-fortune/Ground";
+import { DESCRIPTIONS } from "@/screens/type-intro/constants";
 import { useContext } from "react";
 
 const TypeIntro = () => {
   const { type } = useContext(MainContext);
 
-  // if (type === 'todays-fortune') {
-  //     return <div></div>
-  // }
+  if (!type) return null;
 
-  // if (type === 'do-or-dont') {
-  //     return <div></div>
-  // }
+  if (type === "todays-fortune") {
+    return <div>{DESCRIPTIONS.todaysFortune}</div>;
+  }
 
-  if (!type) return <></>;
+  if (type === "do-or-dont") {
+    return <div>{DESCRIPTIONS.doOrDont}</div>;
+  }
 
   return <Ground type={type} />;
 };

@@ -25,7 +25,7 @@ const CardDeck = ({
               card={card}
               isSelected={selectedCards.has(card.name)}
               updateSelectedCard={updateSelectedCard}
-              transform={`translateX(${index * 12}px)`}
+              transform={`${index * 15}px`}
             />
           );
         })}

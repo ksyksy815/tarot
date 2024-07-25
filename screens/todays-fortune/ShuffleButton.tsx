@@ -1,16 +1,14 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+
 type Props = {
   onClick: () => void;
 };
 const ShuffleButton = ({ onClick }: Props) => {
   const handleClick = () => {};
 
-  return (
-    <button type={`button`} onClick={onClick}>
-      Shuffle
-    </button>
-  );
+  return <Button onClick={onClick}>Shuffle</Button>;
 };
 
 export default ShuffleButton;

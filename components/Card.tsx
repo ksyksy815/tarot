@@ -1,8 +1,7 @@
 "use client";
-
 import { TarotCard } from "@/types/tarotCard.type";
+import Image from "next/image";
 import { useState } from "react";
-
 type Props = {
   card: TarotCard;
   isSelected: boolean;
@@ -17,13 +16,22 @@ const Card = ({ card, isSelected, updateSelectedCard, transform }: Props) => {
         open ? "bg-neutral-100" : "bg-neutral-500"
       } ${
         isSelected ? "top-[-20px]" : "hover:top-[-20px]"
-      } border border-neutral-600 shadow-md`}
+      } border border-neutral-600 shadow-md rounded-lg overflow-hidden`}
       onClick={() => {
         updateSelectedCard(card.name);
       }}
-      style={{ transform }}
+      style={{ left: transform }}
     >
-      {open && <p>{card.name}</p>}
+      {open ? (
+        <p>{card.name}</p>
+      ) : (
+        <Image
+          src={"/images/tarot.png"}
+          fill={true}
+          objectFit="cover"
+          alt={"tarot back"}
+        />
+      )}
     </div>
   );
 };
