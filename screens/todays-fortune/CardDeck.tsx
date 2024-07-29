@@ -5,33 +5,23 @@ type Props = {
   cards: TarotCard[];
   selectedCards: Set<string>;
   updateSelectedCard: (cardName: string) => void;
-  resetSelection: () => void;
 };
-const CardDeck = ({
-  cards,
-  selectedCards,
-  updateSelectedCard,
-  resetSelection,
-}: Props) => {
+const CardDeck = ({ cards, selectedCards, updateSelectedCard }: Props) => {
   return (
-    <>
-      <div
-        className={`relative h-[250px] w-full flex items-center justify-start flex-wrap`}
-      >
-        {cards.map((card, index) => {
-          return (
-            <Card
-              key={card.name}
-              card={card}
-              isSelected={selectedCards.has(card.name)}
-              updateSelectedCard={updateSelectedCard}
-              transform={`${index * 15}px`}
-            />
-          );
-        })}
-      </div>
-      <button onClick={() => resetSelection()}>Reset</button>
-    </>
+    <div
+      className={`relative w-full flex items-center justify-center flex-wrap overflow-x-scroll scrollbar-hide border gap-2 py-10`}
+    >
+      {cards.map((card, index) => {
+        return (
+          <Card
+            key={card.name}
+            card={card}
+            isSelected={selectedCards.has(card.name)}
+            updateSelectedCard={updateSelectedCard}
+          />
+        );
+      })}
+    </div>
   );
 };
 

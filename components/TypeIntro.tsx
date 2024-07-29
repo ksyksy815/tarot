@@ -1,22 +1,31 @@
 import { MainContext } from "@/screens/home/MainContextProvider";
-import Ground from "@/screens/todays-fortune/Ground";
 import { DESCRIPTIONS } from "@/screens/type-intro/constants";
 import { useContext } from "react";
+import { Button } from "./ui/button";
 
 const TypeIntro = () => {
-  const { type } = useContext(MainContext);
+  const { type, changeToCardSpread } = useContext(MainContext);
 
   if (!type) return null;
 
   if (type === "todays-fortune") {
-    return <div>{DESCRIPTIONS.todaysFortune}</div>;
+    return (
+      <>
+        <div>{DESCRIPTIONS.todaysFortune}</div>
+        <Button onClick={() => changeToCardSpread()}>Shuffle</Button>
+      </>
+    );
   }
 
   if (type === "do-or-dont") {
     return <div>{DESCRIPTIONS.doOrDont}</div>;
   }
 
-  return <Ground type={type} />;
+  if (type === "choices") {
+    return <div>{DESCRIPTIONS.choices}</div>;
+  }
+
+  return <></>;
 };
 
 export default TypeIntro;

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`w-screen h-screen overflow-y-scroll ${robotoMono.className} bg-[#242424] text-white p-16`}
+        className={`w-screen h-screen overflow-y-scroll ${robotoMono.className} bg-[#242424] text-white`}
       >
         {children}
       </body>

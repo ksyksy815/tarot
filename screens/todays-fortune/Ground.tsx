@@ -1,17 +1,16 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import useResult from "@/hooks/useResult";
 import useShuffledCards from "@/hooks/useShuffledCards";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import SelectedCards from "../card-spread/SelectedCards";
+import { MainContext } from "../home/MainContextProvider";
 import CardDeck from "./CardDeck";
 import Result from "./Result";
-import ShuffleButton from "./ShuffleButton";
 
-type Props = {
-  type: "todays-fortune" | "do-or-dont" | "choices";
-};
-
-const Ground = ({ type }: Props) => {
+const Ground = () => {
+  const { type } = useContext(MainContext);
   const { cards, getShuffledTarotCards } = useShuffledCards();
   const { chosenCards, updateSelectedCards } = useResult();
   const [isShuffled, setIsShuffled] = useState(false);
@@ -59,31 +58,40 @@ const Ground = ({ type }: Props) => {
   };
 
   return (
-    <div className={`relativew-full h-full flex flex-col`}>
-      {isShuffled ? (
-        <CardDeck
-          cards={cards}
-          selectedCards={selectedCards}
-          updateSelectedCard={updateSelectedCard}
-          resetSelection={resetSelection}
-        />
-      ) : (
-        <ShuffleButton onClick={handleClickShuffle} />
-      )}
+    <div
+      className={`relativew w-full h-full flex flex-col items-start gap-y-5 `}
+    >
+      <div className={`w-full flex items-center px-5 justify-end`}>
+        <Button className={"self-end"} onClick={resetSelection}>
+          Reset
+        </Button>
+      </div>
 
-      {showSeeResultButton() && (
-        <button
-          className={`fixed top-1/2 left-1/2`}
-          onClick={() => {
-            updateSelectedCards(selectedCards);
-            setResultRevealed(true);
-          }}
-        >
-          Show result
-        </button>
-      )}
+      <CardDeck
+        cards={cards}
+        selectedCards={selectedCards}
+        updateSelectedCard={updateSelectedCard}
+      />
+
+      <div className={`w-full flex items-center px-5 justify-end`}>
+        {showSeeResultButton() && (
+          <Button
+            className={"self-end"}
+            onClick={() => {
+              updateSelectedCards(selectedCards);
+              setResultRevealed(true);
+            }}
+          >
+            Show result
+          </Button>
+        )}
+      </div>
 
       {resultRevealed && <Result chosenCards={chosenCards} />}
+
+      {selectedCards.size > 0 && (
+        <SelectedCards selectedCards={selectedCards} />
+      )}
     </div>
   );
 };

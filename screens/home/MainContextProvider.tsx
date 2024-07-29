@@ -12,12 +12,16 @@ export type MainContextType = {
   currentStep: LifeCycle;
   type: "todays-fortune" | "do-or-dont" | "choices" | null;
   changeToTypeIntro: (type: MainContextType["type"]) => void;
+  changeToCardSpread: () => void;
+  changeToShowResult: () => void;
 };
 
 export const MainContext = createContext<MainContextType>({
   currentStep: "select-type",
   type: null,
   changeToTypeIntro: () => {},
+  changeToCardSpread: () => {},
+  changeToShowResult: () => {},
 });
 
 const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
@@ -30,8 +34,24 @@ const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
     setCurrentStep("type-intro");
   };
 
+  const changeToCardSpread = () => {
+    setCurrentStep("card-spread");
+  };
+
+  const changeToShowResult = () => {
+    setCurrentStep("show-result");
+  };
+
   return (
-    <MainContext.Provider value={{ currentStep, type, changeToTypeIntro }}>
+    <MainContext.Provider
+      value={{
+        currentStep,
+        type,
+        changeToTypeIntro,
+        changeToCardSpread,
+        changeToShowResult,
+      }}
+    >
       {children}
     </MainContext.Provider>
   );
