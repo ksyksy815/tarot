@@ -3,8 +3,8 @@ import { TarotCard } from "@/types/tarotCard.type";
 
 type Props = {
   cards: TarotCard[];
-  selectedCards: Set<string>;
-  updateSelectedCard: (cardName: string) => void;
+  selectedCards: Set<number>;
+  updateSelectedCard: (cardIndex: number) => void;
 };
 const CardDeck = ({ cards, selectedCards, updateSelectedCard }: Props) => {
   return (
@@ -16,8 +16,8 @@ const CardDeck = ({ cards, selectedCards, updateSelectedCard }: Props) => {
           <Card
             key={card.name}
             card={card}
-            isSelected={selectedCards.has(card.name)}
-            updateSelectedCard={() => updateSelectedCard(card)}
+            isSelected={selectedCards.has(card.index)}
+            updateSelectedCard={() => updateSelectedCard(card.index)}
           />
         );
       })}

@@ -1,5 +1,9 @@
 "use client";
 
+import { tarotCards } from "@/constants/tarotCards";
+import useFetchFortune from "@/hooks/useFetchFortune";
+import useShuffledCards from "@/hooks/useShuffledCards";
+import { TarotCard } from "@/types/tarotCard.type";
 import { createContext, useState } from "react";
 
 export type LifeCycle =
@@ -11,24 +15,35 @@ export type LifeCycle =
 export type MainContextType = {
   currentStep: LifeCycle;
   type: "todaysFortune" | "doOrDont" | "choices" | null;
+  shuffledCards: TarotCard[]; // 78개의 셔플된 카드들
+  cards: TarotCard[]; // 선택된 카드들 (포춘텔링 대상)
+  result: any;
+  isLoading: boolean;
   changeToTypeIntro: (type: MainContextType["type"]) => void;
   changeToCardSpread: () => void;
-  changeToShowResult: () => void;
+  changeToShowResult: (selectedCards: Set<number>) => void;
 };
 
 export const MainContext = createContext<MainContextType>({
   currentStep: "select-type",
   type: null,
+  shuffledCards: [],
+  cards: [],
+  result: null,
+  isLoading: false,
   changeToTypeIntro: () => {},
   changeToCardSpread: () => {},
   changeToShowResult: () => {},
 });
 
 const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const { shuffledCards, shuffleCards } = useShuffledCards();
+  const { data, status, fetchFortune } = useFetchFortune();
+
   const [currentStep, setCurrentStep] =
     useState<MainContextType["currentStep"]>("select-type");
   const [type, setType] = useState<MainContextType["type"]>(null);
-  const [selectedCards, setSelectedCards] = useState<Set<string>>(new Set());
+  const [cards, setCards] = useState<TarotCard[]>([]);
 
   const changeToTypeIntro = (type: MainContextType["type"]) => {
     setType(type);
@@ -36,10 +51,18 @@ const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const changeToCardSpread = () => {
+    shuffleCards();
     setCurrentStep("card-spread");
   };
 
-  const changeToShowResult = () => {
+  const changeToShowResult = (selectedCards: Set<number>) => {
+    const cardList = [...selectedCards].map((index) => tarotCards[index]);
+
+    setCards(cardList);
+
+    // TODO: 여기서 AI한테 카드 정보를 전달
+    fetchFortune(type, cardList[0].name);
+
     setCurrentStep("show-result");
   };
 
@@ -48,6 +71,10 @@ const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
       value={{
         currentStep,
         type,
+        shuffledCards,
+        cards,
+        result: data,
+        isLoading: status === "pending",
         changeToTypeIntro,
         changeToCardSpread,
         changeToShowResult,

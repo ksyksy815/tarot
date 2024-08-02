@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { MainContext } from "../home/MainContextProvider";
 
 type Props = {
-  selectedCards: Set<string>;
+  selectedCards: Set<number>;
 };
 const SelectedCards = ({ selectedCards }: Props) => {
   const { changeToShowResult } = useContext(MainContext);
@@ -13,7 +13,9 @@ const SelectedCards = ({ selectedCards }: Props) => {
     >
       {`Number of selected cards: ${selectedCards.size}`}
 
-      <Button onClick={changeToShowResult}>See Result</Button>
+      <Button onClick={() => changeToShowResult(selectedCards)}>
+        See Result
+      </Button>
     </footer>
   );
 };

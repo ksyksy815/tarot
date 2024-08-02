@@ -1,33 +1,32 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import useShuffledCards from "@/hooks/useShuffledCards";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SelectedCards from "../card-spread/SelectedCards";
+import { MainContext } from "../home/MainContextProvider";
 import CardDeck from "./CardDeck";
 
 const SelectCards = () => {
-  const { cards } = useShuffledCards();
+  const { shuffledCards } = useContext(MainContext);
+  const [selectedCards, setSelectedCards] = useState<Set<number>>(new Set());
 
-  const [selectedCards, setSelectedCards] = useState<Set<string>>(new Set());
-
-  const addSelectedCard = (cardName: string) => {
-    setSelectedCards((prev) => new Set(prev.add(cardName)));
+  const addSelectedCard = (cardIndex: number) => {
+    setSelectedCards((prev) => new Set(prev.add(cardIndex)));
   };
 
-  const removeSelectedCard = (cardName: string) => {
+  const removeSelectedCard = (cardIndex: number) => {
     setSelectedCards((prev) => {
       const newSelectedCards = new Set(prev);
-      newSelectedCards.delete(cardName);
+      newSelectedCards.delete(cardIndex);
       return newSelectedCards;
     });
   };
 
-  const updateSelectedCard = (cardName: string) => {
-    if (selectedCards.has(cardName)) {
-      removeSelectedCard(cardName);
+  const updateSelectedCard = (cardIndex: number) => {
+    if (selectedCards.has(cardIndex)) {
+      removeSelectedCard(cardIndex);
     } else {
-      addSelectedCard(cardName);
+      addSelectedCard(cardIndex);
     }
   };
 
@@ -44,7 +43,7 @@ const SelectCards = () => {
       </div>
 
       <CardDeck
-        cards={cards}
+        cards={shuffledCards}
         selectedCards={selectedCards}
         updateSelectedCard={updateSelectedCard}
       />

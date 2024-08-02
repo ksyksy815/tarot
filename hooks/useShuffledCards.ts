@@ -3,7 +3,7 @@ import { TarotCard } from "@/types/tarotCard.type";
 import { useState } from "react";
 
 const useShuffledCards = () => {
-  const [cards, setCards] = useState<TarotCard[]>(tarotCards);
+  const [shuffledCards, setShuffledCards] = useState<TarotCard[]>(tarotCards);
 
   const shuffleArray = <T>(array: T[]): T[] => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -13,14 +13,14 @@ const useShuffledCards = () => {
     return array;
   };
 
-  const getShuffledTarotCards = () => {
+  const shuffleCards = () => {
     const shuffledCards = shuffleArray(tarotCards.slice());
-    setCards(shuffledCards);
+    setShuffledCards(shuffledCards);
   };
 
   return {
-    cards,
-    getShuffledTarotCards,
+    shuffledCards,
+    shuffleCards,
   };
 };
 
