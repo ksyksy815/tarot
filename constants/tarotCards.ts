@@ -17,31 +17,31 @@ export const tarotCards: TarotCard[] = [
   {
     name: "The High Priestess",
     type: "Major Arcana",
-    image: "/images/The High Priestess.jpg",
+    image: "/images/theHighPriestess.png",
     index: 2,
   },
   {
     name: "The Empress",
     type: "Major Arcana",
-    image: "/images/The Empress.jpg",
+    image: "/images/theEmpress.png",
     index: 3,
   },
   {
     name: "The Emperor",
     type: "Major Arcana",
-    image: "/images/The Emperor.jpg",
+    image: "/images/theEmperor.png",
     index: 4,
   },
   {
     name: "The Hierophant",
     type: "Major Arcana",
-    image: "/images/The Hierophant.jpg",
+    image: "/images/theHierophant.png",
     index: 5,
   },
   {
     name: "The Lovers",
     type: "Major Arcana",
-    image: "/images/The Lovers.jpg",
+    image: "/images/theLovers.png",
     index: 6,
   },
   {
