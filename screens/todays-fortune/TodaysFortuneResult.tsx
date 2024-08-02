@@ -9,9 +9,14 @@ const TodaysFortuneResult = () => {
   const card = cards[0];
 
   return (
-    <div className={`flex flex-col items-start md:flex-row gap-10`}>
-      <div key={card.name} className={`relative w-full max-w-[832px] h-screen`}>
-        <div className={`relative w-full max-w-[832px] h-full bg-stone-200`}>
+    <div
+      className={`flex flex-col items-start md:flex-row gap-10 md:px-5 xl:px-0`}
+    >
+      <div
+        key={card.name}
+        className={`relative w-full max-w-[832px] h-screen max-h-[1456px]`}
+      >
+        <div className={`relative w-full max-w-[832px] h-auto bg-stone-200`}>
           <Image
             src={card.image}
             fill={true}
@@ -28,7 +33,7 @@ const TodaysFortuneResult = () => {
         </div>
       </div>
 
-      <section className={`w-full flex flex-col p-5 md:p-10 `}>
+      <section className={`w-full flex flex-col p-5 md:py-10 xl:px-0`}>
         {isLoading && <div>Loading...</div>}
         {result && (
           <div

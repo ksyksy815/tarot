@@ -32,3 +32,38 @@ export const getTodaysFortune = async (cardName: string) => {
     handleError(error, "Failed to get Today's Fortune");
   }
 };
+
+export const getDoOrDont = async ({
+  cardNames = ["", ""],
+  context = "",
+}: {
+  cardNames: [string, string];
+  context: string;
+}) => {
+  try {
+    if (!context || !cardNames[0] || !cardNames[1]) {
+      throw new Error("Invalid parameters");
+    }
+
+    const result = await openAi.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a tarot reader. Provide a detailed reading based on the provided context and the two tarot cards.",
+        },
+        { role: "user", content: `Context: ${context}` },
+        {
+          role: "user",
+          content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}.`,
+        },
+      ],
+    });
+
+    //return result.choices[0].message.content
+    return "무조건 1번입니다 선생님 가시죠 선생님";
+  } catch (error: any) {
+    handleError(error, "Failed to get Do or Don't");
+  }
+};

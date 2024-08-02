@@ -101,3 +101,9 @@
     animation: glow-animation 3s infinite alternate;
   }
 }
+
+@layer utilities {
+  .subtitle {
+    @apply text-lg font-semibold uppercase;
+  }
+}
