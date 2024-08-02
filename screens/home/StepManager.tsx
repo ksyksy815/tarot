@@ -4,7 +4,7 @@ import Select from "@/components/Select";
 import TypeIntro from "@/components/TypeIntro";
 import { useContext } from "react";
 import ShowResult from "../show-result/ShowResult";
-import Ground from "../todays-fortune/Ground";
+import SelectCards from "../todays-fortune/SelectCards";
 import { MainContext } from "./MainContextProvider";
 
 const StepManager = () => {
@@ -19,7 +19,7 @@ const StepManager = () => {
   }
 
   if (currentStep === "card-spread") {
-    return <Ground />;
+    return <SelectCards />;
   }
 
   if (currentStep === "show-result") {

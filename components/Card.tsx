@@ -1,6 +1,5 @@
 "use client";
 import { TarotCard } from "@/types/tarotCard.type";
-import Image from "next/image";
 import { useState } from "react";
 type Props = {
   card: TarotCard;
@@ -10,28 +9,22 @@ type Props = {
 const Card = ({ card, isSelected, updateSelectedCard }: Props) => {
   const [open, setOpen] = useState(false);
   const [showEffect, setShowEffect] = useState(false);
+
+  const selectedStyle = ``;
   return (
     <div
-      className={`relative h-[250px] w-[150px] cursor-pointer rounded-lg ${
-        open ? "bg-neutral-100" : ""
-      } border border-neutral-600 shadow-md overflow-hidden transition-all duration-300 hover:glow hover:translate-y-[-5px]`}
+      className={`relative h-[50px] w-[30px] md:h-[250px] md:w-[150px] cursor-pointer rounded-lg transition-all duration-300 ${
+        isSelected
+          ? "bg-violet-300 shadow-card-selected"
+          : "shadow-card-default"
+      } hover:glow hover:translate-y-[-5px]`}
       onClick={() => {
         updateSelectedCard(card.name);
       }}
       // onMouseEnter={() => setShowEffect(true)}
       // onMouseLeave={() => setShowEffect(false)}
     >
-      {open ? (
-        <p>{card.name}</p>
-      ) : (
-        <Image
-          src={"/images/tarot.png"}
-          width={150}
-          height={250}
-          alt={"tarot back"}
-          className={`w-full object-cover`}
-        />
-      )}
+      {open && <p>{card.name}</p>}
     </div>
   );
 };

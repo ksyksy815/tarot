@@ -13,7 +13,7 @@ const SelectedCards = ({ selectedCards }: Props) => {
     >
       {`Number of selected cards: ${selectedCards.size}`}
 
-      <Button onClick={changeToShowResult}>Seee Result</Button>
+      <Button onClick={changeToShowResult}>See Result</Button>
     </footer>
   );
 };

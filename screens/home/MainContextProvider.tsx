@@ -10,7 +10,7 @@ export type LifeCycle =
 
 export type MainContextType = {
   currentStep: LifeCycle;
-  type: "todays-fortune" | "do-or-dont" | "choices" | null;
+  type: "todaysFortune" | "doOrDont" | "choices" | null;
   changeToTypeIntro: (type: MainContextType["type"]) => void;
   changeToCardSpread: () => void;
   changeToShowResult: () => void;
@@ -28,6 +28,7 @@ const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentStep, setCurrentStep] =
     useState<MainContextType["currentStep"]>("select-type");
   const [type, setType] = useState<MainContextType["type"]>(null);
+  const [selectedCards, setSelectedCards] = useState<Set<string>>(new Set());
 
   const changeToTypeIntro = (type: MainContextType["type"]) => {
     setType(type);

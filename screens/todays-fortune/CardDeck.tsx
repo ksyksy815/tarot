@@ -9,7 +9,7 @@ type Props = {
 const CardDeck = ({ cards, selectedCards, updateSelectedCard }: Props) => {
   return (
     <div
-      className={`relative w-full flex items-center justify-center flex-wrap overflow-x-scroll scrollbar-hide border gap-2 py-10`}
+      className={`relative w-full flex items-center justify-center flex-wrap overflow-x-scroll scrollbar-hide gap-2 pt-10 px-5 pb-[30vh]`}
     >
       {cards.map((card, index) => {
         return (
@@ -17,7 +17,7 @@ const CardDeck = ({ cards, selectedCards, updateSelectedCard }: Props) => {
             key={card.name}
             card={card}
             isSelected={selectedCards.has(card.name)}
-            updateSelectedCard={updateSelectedCard}
+            updateSelectedCard={() => updateSelectedCard(card)}
           />
         );
       })}
