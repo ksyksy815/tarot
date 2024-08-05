@@ -1,4 +1,4 @@
-import SelectSpread from "@/screens/select/SelectSpread";
+import SelectSpread from "./SelectSpread";
 import { SERVICES } from "./constants";
 
 const Services = () => {

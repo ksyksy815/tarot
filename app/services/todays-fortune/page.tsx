@@ -1,5 +1,12 @@
+import BasicPage from "@/components/BasicPage";
+import IntroContainer from "@/components/IntroContainer";
+
 const Page = () => {
-  return <div>Page</div>;
+  return (
+    <BasicPage>
+      <IntroContainer type={"todaysFortune"} />
+    </BasicPage>
+  );
 };
 
 export default Page;

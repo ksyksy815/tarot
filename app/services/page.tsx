@@ -47,6 +47,14 @@ const Page = () => {
           alt={"Services"}
           className={"h-full w-full object-cover"}
         />
+
+        <p
+          className={
+            " h-[250px] w-[250px] grid place-content-center text-center text-white absolute top-1/2 left-1/2  translate-x-[-50%] translate-y-[-50%] text-5xl border border-white rounded-full bg-white/20 font-serif italic"
+          }
+        >
+          AICana
+        </p>
       </section>
 
       <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
