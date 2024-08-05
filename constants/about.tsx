@@ -1,4 +1,11 @@
 import { ContentStructure } from "@/types/content.type";
+import {
+  FaCheckCircle,
+  FaClock,
+  FaCogs,
+  FaPalette,
+  FaUser,
+} from "react-icons/fa";
 
 export const ABOUT: ContentStructure = {
   introduction: {
@@ -45,26 +52,41 @@ export const ABOUT: ContentStructure = {
         subtitle: "Accurate Readings",
         description:
           "Our AI has been trained on extensive tarot data to provide you with precise and meaningful interpretations.",
+        icon: () => {
+          return <FaCheckCircle size={24} color="white" />;
+        },
       },
       {
         subtitle: "24/7 Accessibility",
         description:
           "Access your tarot readings anytime, anywhere. Our platform is available around the clock to offer you guidance whenever you need it.",
+        icon: () => {
+          return <FaClock size={24} color="white" />;
+        },
       },
       {
         subtitle: "Personalized Insights",
         description:
           "Each reading is customized based on the context you provide, ensuring that the guidance you receive is relevant to your unique situation",
+        icon: () => {
+          return <FaUser size={24} color="white" />;
+        },
       },
       {
         subtitle: "Innovative Technology",
         description:
           "We harness the power of artificial intelligence to enhance the depth and accuracy of traditional tarot readings.",
+        icon: () => {
+          return <FaCogs size={24} color="white" />;
+        },
       },
       {
         subtitle: "Beautifully Designed Deck",
         description:
           "Our digital tarot cards are crafted with care and attention to detail, bringing the mystical allure of tarot to your screen.",
+        icon: () => {
+          return <FaPalette size={24} color="white" />;
+        },
       },
     ],
   },

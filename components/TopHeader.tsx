@@ -4,7 +4,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Fortunes", href: "/fortunes" },
+  { label: "Services", href: "/services" },
 ];
 
 const TopHeader = () => {
@@ -15,12 +15,14 @@ const TopHeader = () => {
       <div
         className={`h-[80px] w-full flex items-center justify-between max-w-screen-xl`}
       >
-        <Image
-          src={"/icons/logo.svg"}
-          alt={"AICana logo"}
-          width={162}
-          height={48}
-        />
+        <Link href="/">
+          <Image
+            src={"/icons/logo.svg"}
+            alt={"AICana logo"}
+            width={162}
+            height={48}
+          />
+        </Link>
         <nav className={`flex items-center gap-x-10`}>
           {NAV_ITEMS.map((item, index) => (
             <Link key={index} href={item.href}>

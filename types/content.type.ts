@@ -2,6 +2,7 @@ export type ListContent = {
   subtitle: string;
   description: string;
   slug?: string;
+  icon?: () => JSX.Element;
 };
 
 export type BasicContent = {

@@ -1,10 +1,15 @@
-import Providers from "@/components/Providers";
-import StepManager from "@/screens/home/StepManager";
+import OurServices from "@/screens/about/OurServices";
+import WhyChoose from "@/screens/about/WhyChoose";
+import HeroSection from "@/screens/home/HeroSection";
+import Testimonials from "@/screens/home/Testimonials";
 
 export default function Home() {
   return (
-    <Providers>
-      <StepManager />
-    </Providers>
+    <div>
+      <HeroSection />
+      <WhyChoose />
+      <OurServices />
+      <Testimonials />
+    </div>
   );
 }
