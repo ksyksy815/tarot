@@ -21,7 +21,7 @@ export const ABOUT: ContentStructure = {
   howAIcanaWorks: {
     title: "How AIcana Works",
     description:
-      "AIcana combines the timeless wisdom of tarot with the innovative power of AI. Here’s how it works:",
+      "AIcana combines the timeless wisdom of tarot with the innovative power of AI.",
     list: [
       {
         subtitle: "User-Friendly Interface",

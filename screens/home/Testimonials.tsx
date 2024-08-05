@@ -2,7 +2,9 @@ import { FaUser } from "react-icons/fa";
 
 const Testimonials = () => {
   return (
-    <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 p-20`}>
+    <section
+      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[10vw] py-[60px]`}
+    >
       <h2 className={"text-3xl font-bold"}>What Out Clients Say</h2>
       <p>
         Hear from real people who have experienced the power of tarot readings.

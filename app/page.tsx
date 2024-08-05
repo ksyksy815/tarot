@@ -5,7 +5,7 @@ import Testimonials from "@/screens/home/Testimonials";
 
 export default function Home() {
   return (
-    <div>
+    <div className={"w-full flex flex-col gap-y-[100px]"}>
       <HeroSection />
       <WhyChoose />
       <OurServices />

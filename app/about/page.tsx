@@ -20,12 +20,12 @@ const Page = () => {
 
       <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
         <h2 className={"subtitle"}>{ABOUT.mission.title}</h2>
-        <p>{ABOUT.mission.description}</p>
+        <p className={"text-lg"}>{ABOUT.mission.description}</p>
       </section>
 
       <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
         <h2 className={"subtitle"}>{ABOUT.howAIcanaWorks.title}</h2>
-        <p>{ABOUT.howAIcanaWorks.description}</p>
+        <p className={"text-lg"}>{ABOUT.howAIcanaWorks.description}</p>
 
         <div className={`w-full flex flex-col md:flex-row gap-10`}>
           <div
@@ -45,8 +45,8 @@ const Page = () => {
             {ABOUT.howAIcanaWorks.list!.map((item, index) => {
               return (
                 <li key={index}>
-                  <h3 className={`font-semibold`}>{item.subtitle}</h3>
-                  <p>{item.description}</p>
+                  <h3 className={`font-bold text-xl`}>{item.subtitle}</h3>
+                  <p className={"text-lg"}>{item.description}</p>
                 </li>
               );
             })}
@@ -56,12 +56,25 @@ const Page = () => {
 
       <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
         <h2 className={"subtitle"}>{ABOUT.meetTheDeveloper.title}</h2>
-        <p>{ABOUT.meetTheDeveloper.description}</p>
+
+        <div className={"w-full flex flex-col md:flex-row gap-10"}>
+          <div
+            className={"relative h-[300px] w-full rounded-lg overflow-hidden"}
+          >
+            <Image
+              src={"/images/developer.png"}
+              fill
+              alt={"Developer"}
+              className={"w-full object-cover"}
+            />
+          </div>
+          <p className={"text-lg"}>{ABOUT.meetTheDeveloper.description}</p>
+        </div>
       </section>
 
       <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
         <h2 className={"subtitle"}>{ABOUT.contactUs.title}</h2>
-        <p>{ABOUT.contactUs.description}</p>
+        <p className={"text-lg"}>{ABOUT.contactUs.description}</p>
       </section>
     </div>
   );

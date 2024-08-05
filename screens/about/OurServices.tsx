@@ -3,9 +3,7 @@ import { ABOUT } from "@/constants/about";
 
 const OurServices = () => {
   return (
-    <section
-      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[10vw] py-[10vh]`}
-    >
+    <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[10vw]`}>
       <h2 className={"text-4xl font-bold"}>
         {ABOUT.ourTarotReadingServices.title}
       </h2>
