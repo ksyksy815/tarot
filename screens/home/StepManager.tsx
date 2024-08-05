@@ -1,6 +1,5 @@
 "use client";
 
-import TypeIntro from "@/components/TypeIntro";
 import { useContext } from "react";
 import ShowResult from "../show-result/ShowResult";
 import SelectCards from "../todays-fortune/SelectCards";
@@ -13,9 +12,9 @@ const StepManager = () => {
   //   return <Select />;
   // }
 
-  if (currentStep === "type-intro") {
-    return <TypeIntro />;
-  }
+  // if (currentStep === "type-intro") {
+  //   return <TypeIntro />;
+  // }
 
   if (currentStep === "card-spread") {
     return <SelectCards />;
