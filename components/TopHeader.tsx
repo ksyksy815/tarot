@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import Logo from "./Logo";
 import MobileNav from "./MobileNav";
 import PCNav from "./PCNav";
 
@@ -11,14 +10,7 @@ const TopHeader = () => {
       <div
         className={`h-[80px] w-full flex items-center justify-between max-w-screen-xl px-5 xl:px-0`}
       >
-        <Link href="/">
-          <Image
-            src={"/icons/logo.svg"}
-            alt={"AICana logo"}
-            width={162}
-            height={48}
-          />
-        </Link>
+        <Logo />
 
         <MobileNav />
         <PCNav />
