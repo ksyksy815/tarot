@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: rgba(140, 109, 188, 0.6);
+  background-color: rgba(140, 109, 188, 0.3);
 }
 
 @layer base {

@@ -1,7 +1,6 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NAV_ITEMS } from "@/constants/navigation";
-import Link from "next/link";
 import { RiMenu3Line } from "react-icons/ri";
+import NavItems from "./nav/NavItems";
 
 const MobileNav = () => {
   return (
@@ -10,16 +9,8 @@ const MobileNav = () => {
         <RiMenu3Line size={24} />
       </SheetTrigger>
       <SheetContent>
-        <nav className={`flex flex-col items-start gap-5`}>
-          {NAV_ITEMS.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href}
-              className={"hover:bg-violet-900 hover:text-white px-5 rounded-lg"}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className={`mt-10 flex flex-col items-start gap-5`}>
+          <NavItems />
         </nav>
       </SheetContent>
     </Sheet>

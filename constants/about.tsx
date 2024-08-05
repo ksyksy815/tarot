@@ -6,6 +6,7 @@ import {
   FaPalette,
   FaUser,
 } from "react-icons/fa";
+import { URLS } from "./urls";
 
 export const ABOUT: ContentStructure = {
   introduction: {
@@ -98,19 +99,19 @@ export const ABOUT: ContentStructure = {
       {
         subtitle: "Today’s Fortune",
         description: "Choose one card and discover how your day will unfold.",
-        slug: "/todays-fortune",
+        slug: URLS.services.todaysFortune,
       },
       {
         subtitle: "Do or Don’t",
         description:
           "Input your specific context and get guidance on whether to take a particular action.",
-        slug: "/do-or-dont",
+        slug: URLS.services.doOrDont,
       },
       {
         subtitle: "Choices",
         description:
           "Select 2 or 3 cards to see the outcomes of different options based on your provided context.",
-        slug: "/choices",
+        slug: URLS.services.choices,
       },
     ],
   },
