@@ -91,7 +91,7 @@ export const ABOUT: ContentStructure = {
     ],
   },
   ourTarotReadingServices: {
-    title: "Our TarotReading Services",
+    title: "Our Tarot Reading Services",
     description:
       "Whether you’re seeking guidance on a specific issue or want a deeper exploration of your life’s path, we offer a variety of tarot reading services to meet your needs.",
     list: [

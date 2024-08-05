@@ -2,8 +2,10 @@ import { ABOUT } from "@/constants/about";
 
 const WhyChoose = () => {
   return (
-    <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
-      <h2 className={"subtitle"}>{ABOUT.whyChooseAIcana.title}</h2>
+    <section
+      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[10vw] py-[10vh]`}
+    >
+      <h2 className={"text-4xl font-bold"}>{ABOUT.whyChooseAIcana.title}</h2>
       <ul className={"flex flex-wrap items-start w-full gap-6"}>
         {ABOUT.whyChooseAIcana.list!.map((item, index) => {
           return (

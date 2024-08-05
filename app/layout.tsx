@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll ${robotoMono.className}  bg-[#ecf0f3] text-black`}
       >
         <TopHeader />
-        <div className={`w-full max-w-screen-xl`}>{children}</div>
+        <div className={`w-full flex-1 max-w-screen-xl`}>{children}</div>
 
         <Footer />
       </body>
