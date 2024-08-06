@@ -1,6 +1,6 @@
 import Logo from "./Logo";
-import MobileNav from "./MobileNav";
-import PCNav from "./PCNav";
+import MobileNav from "./nav/MobileNav";
+import PCNav from "./nav/PCNav";
 
 const TopHeader = () => {
   return (

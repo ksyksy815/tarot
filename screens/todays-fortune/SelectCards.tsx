@@ -1,38 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useContext, useState } from "react";
-import SelectedCards from "../card-spread/SelectedCards";
-import { MainContext } from "../home/MainContextProvider";
-import CardDeck from "./CardDeck";
+import { TarotCard } from "@/types/tarotCard.type";
+import { useContext } from "react";
+import SelectionPanel from "../card-spread/SelectionPanel";
+import CardDeck from "../card-spread/SpreadCards";
+import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
-const SelectCards = () => {
-  const { shuffledCards } = useContext(MainContext);
-  const [selectedCards, setSelectedCards] = useState<Set<number>>(new Set());
+type Props = {
+  shuffledCards: TarotCard[];
+};
 
-  const addSelectedCard = (cardIndex: number) => {
-    setSelectedCards((prev) => new Set(prev.add(cardIndex)));
-  };
-
-  const removeSelectedCard = (cardIndex: number) => {
-    setSelectedCards((prev) => {
-      const newSelectedCards = new Set(prev);
-      newSelectedCards.delete(cardIndex);
-      return newSelectedCards;
-    });
-  };
-
-  const updateSelectedCard = (cardIndex: number) => {
-    if (selectedCards.has(cardIndex)) {
-      removeSelectedCard(cardIndex);
-    } else {
-      addSelectedCard(cardIndex);
-    }
-  };
-
-  const resetSelection = () => {
-    setSelectedCards(new Set());
-  };
+const SelectCards = ({ shuffledCards = [] }: Props) => {
+  const { selectedCards, resetSelection } = useContext(PlayGroundContext);
 
   return (
     <div className={`relativew w-full flex flex-col items-start gap-y-5`}>
@@ -42,15 +22,9 @@ const SelectCards = () => {
         </Button>
       </div>
 
-      <CardDeck
-        cards={shuffledCards}
-        selectedCards={selectedCards}
-        updateSelectedCard={updateSelectedCard}
-      />
+      <CardDeck shuffledCards={shuffledCards} />
 
-      {selectedCards.size > 0 && (
-        <SelectedCards selectedCards={selectedCards} />
-      )}
+      {selectedCards.length > 0 && <SelectionPanel />}
     </div>
   );
 };

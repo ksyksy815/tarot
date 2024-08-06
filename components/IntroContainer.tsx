@@ -1,8 +1,8 @@
 "use client";
 
-import { SPREAD_TYPES } from "@/screens/type-intro/constants";
+import { SPREAD_TYPES } from "@/constants/servicesIntro";
+import PlayGround from "@/screens/playGround/PlayGround";
 import Image from "next/image";
-import { Button } from "./ui/button";
 
 type Props = {
   type: keyof typeof SPREAD_TYPES;
@@ -33,9 +33,10 @@ const IntroContainer = ({ type }: Props) => {
       </section>
 
       <section className={"w-full flex flex-col gap-10 px-[40px] xl:px-0"}>
-        <p>{SPREAD_TYPES[type].description || "-"}</p>
-        <Button onClick={() => {}}>Shuffle</Button>
+        <p className={"text-lg"}>{SPREAD_TYPES[type].description || "-"}</p>
       </section>
+
+      <PlayGround type={type} />
     </div>
   );
 };

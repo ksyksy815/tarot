@@ -1,14 +1,21 @@
 "use client";
+import { PlayGroundContext } from "@/screens/playGround/PalyGroundContextProvider";
 import { TarotCard } from "@/types/tarotCard.type";
-import { useState } from "react";
+import { useContext, useState } from "react";
+
 type Props = {
   card: TarotCard;
-  isSelected: boolean;
-  updateSelectedCard: (cardName: string) => void;
 };
-const Card = ({ card, isSelected, updateSelectedCard }: Props) => {
+
+const Card = ({ card }: Props) => {
+  const { selectedCards, updateSelectedCards } = useContext(PlayGroundContext);
+
   const [open, setOpen] = useState(false);
   const [showEffect, setShowEffect] = useState(false);
+
+  const isSelected =
+    selectedCards.filter((selectedCard) => selectedCard.index === card.index)
+      .length > 0;
 
   const selectedStyle = ``;
   return (
@@ -19,10 +26,8 @@ const Card = ({ card, isSelected, updateSelectedCard }: Props) => {
           : "shadow-card-default"
       } hover:glow hover:translate-y-[-5px]`}
       onClick={() => {
-        updateSelectedCard(card.name);
+        updateSelectedCards(card);
       }}
-      // onMouseEnter={() => setShowEffect(true)}
-      // onMouseLeave={() => setShowEffect(false)}
     >
       {open && <p>{card.name}</p>}
     </div>

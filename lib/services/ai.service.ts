@@ -9,6 +9,10 @@ class AiService {
       method: "GET",
     }).then((res) => res.json());
   };
+
+  getDoOrDont = async (cardNames: string[], context: string) => {};
+
+  getChoices = async (cardNames: string[], context: string) => {};
 }
 
 const aiService = new AiService();

@@ -1,25 +1,31 @@
 import { QUERY_KEYS } from "@/constants/queryKeys";
 import aiService from "@/lib/services/ai.service";
-import { MainContextType } from "@/screens/home/MainContextProvider";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 const useFetchFortune = () => {
   const [enabled, setEnabled] = useState(false);
   const [params, setParams] = useState<{
-    type: MainContextType["type"];
-    cardName: string;
+    type: "todaysFortune" | "doOrDont" | "choices";
+    cardNames: string[];
   }>({
     type: "todaysFortune",
-    cardName: "",
+    cardNames: [],
   });
-  const { data, refetch, status } = useQuery({
-    queryKey: [QUERY_KEYS.fortune.todaysFortune, params.type, params.cardName],
-    queryFn: async () => {
-      if (!params.cardName) return null;
+  const [userContext, setUserContext] = useState<string>("");
 
-      if (params.cardName) {
-        return aiService.getTodaysFortune(params.cardName);
+  const { data, refetch, status } = useQuery({
+    queryKey: [QUERY_KEYS.fortune.todaysFortune, params.type, params.cardNames],
+    queryFn: async () => {
+      if (!params.cardNames.length) return null;
+
+      switch (params.type) {
+        case "todaysFortune":
+          return aiService.getTodaysFortune(params.cardNames[0]);
+        case "doOrDont":
+          return aiService.getDoOrDont(params.cardNames, userContext);
+        default:
+          return aiService.getChoices(params.cardNames, userContext);
       }
 
       return null;
@@ -27,13 +33,22 @@ const useFetchFortune = () => {
     enabled,
   });
 
-  const fetchFortune = (type: MainContextType["type"], cardName: string) => {
+  const fetchFortune = ({
+    type,
+    cardNames,
+    context,
+  }: {
+    type: "todaysFortune" | "doOrDont" | "choices";
+    cardNames: string[];
+    context: string;
+  }) => {
     console.log(
       "Client 1. useFetchFortune안의 fetchFortune params: ",
       type,
-      cardName
+      cardNames
     );
-    setParams({ type, cardName });
+    setParams({ type, cardNames });
+    setUserContext(context);
     setEnabled(true);
     //refetch();
   };

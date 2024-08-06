@@ -1,30 +1,38 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import useShuffledCards from "@/hooks/useShuffledCards";
 import { useContext } from "react";
-import ShowResult from "../show-result/ShowResult";
+import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 import SelectCards from "../todays-fortune/SelectCards";
-import { MainContext } from "./MainContextProvider";
+import TodaysFortuneResult from "../todays-fortune/TodaysFortuneResult";
 
 const StepManager = () => {
-  const { currentStep } = useContext(MainContext);
+  const { step, updateStep } = useContext(PlayGroundContext);
+  const { shuffledCards, shuffleCards } = useShuffledCards();
 
-  // if (currentStep === "select-type") {
-  //   return <Select />;
-  // }
-
-  // if (currentStep === "type-intro") {
-  //   return <TypeIntro />;
-  // }
-
-  if (currentStep === "card-spread") {
-    return <SelectCards />;
+  if (step === "INIT") {
+    return (
+      <section className={"w-full flex flex-col gap-10 px-[40px] xl:px-0"}>
+        <Button
+          onClick={() => {
+            shuffleCards();
+            updateStep("SELECT_CARDS");
+          }}
+          className={"self-center text-lg px-5"}
+        >
+          Shuffle
+        </Button>
+      </section>
+    );
   }
 
-  if (currentStep === "show-result") {
-    return <ShowResult />;
+  if (step === "SELECT_CARDS") {
+    return <SelectCards shuffledCards={shuffledCards} />;
   }
 
-  return <></>;
+  // * "SHOW-RESULT"
+  return <TodaysFortuneResult />;
 };
 
 export default StepManager;

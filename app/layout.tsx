@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
 import TopHeader from "@/components/TopHeader";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
@@ -21,8 +22,10 @@ export default function RootLayout({
       <body
         className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll ${robotoMono.className}  bg-[#ecf0f3] text-black`}
       >
-        <TopHeader />
-        <div className={`w-full flex-1 max-w-screen-xl`}>{children}</div>
+        <Providers>
+          <TopHeader />
+          <div className={`w-full flex-1 max-w-screen-xl`}>{children}</div>
+        </Providers>
 
         <Footer />
       </body>

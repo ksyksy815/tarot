@@ -1,6 +1,6 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { RiMenu3Line } from "react-icons/ri";
-import NavItems from "./nav/NavItems";
+import NavItems from "./NavItems";
 
 const MobileNav = () => {
   return (

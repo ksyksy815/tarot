@@ -1,6 +1,5 @@
 "use client";
 
-import MainContextProvider from "@/screens/home/MainContextProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 
@@ -29,9 +28,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   const queryClient = getQueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <MainContextProvider>{children}</MainContextProvider>
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
 

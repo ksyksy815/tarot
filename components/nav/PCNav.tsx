@@ -1,4 +1,4 @@
-import NavItems from "./nav/NavItems";
+import NavItems from "./NavItems";
 
 const PCNav = () => {
   return (
