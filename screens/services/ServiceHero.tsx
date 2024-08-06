@@ -15,7 +15,7 @@ const ServiceHero = () => {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className={"relative h-[640px] max-h-[816px] w-screen z-[-1]"}
+          className={"relative h-[640px] max-h-[816px] w-full z-[-1]"}
         >
           <Image
             src={"/images/services.png"}
