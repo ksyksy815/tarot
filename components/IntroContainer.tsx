@@ -32,7 +32,7 @@ const IntroContainer = ({ type }: Props) => {
         </h1>
       </section>
 
-      <section className={"w-full flex flex-col gap-10 px-[10vw] xl:px-0"}>
+      <section className={"w-full flex flex-col gap-10 px-[40px] xl:px-0"}>
         <p>{SPREAD_TYPES[type].description || "-"}</p>
         <Button onClick={() => {}}>Shuffle</Button>
       </section>

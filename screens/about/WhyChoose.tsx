@@ -2,15 +2,19 @@ import { ABOUT } from "@/constants/about";
 
 const WhyChoose = () => {
   return (
-    <section className={`w-full flex flex-col gap-y-10 px-[10vw] py-[60px]`}>
+    <section className={`w-full flex flex-col gap-y-10 px-[40px] pb-[60px]`}>
       <h2 className={"text-4xl font-bold"}>{ABOUT.whyChooseAIcana.title}</h2>
-      <ul className={"flex flex-wrap items-start w-full gap-6"}>
+      <ul
+        className={
+          "flex flex-col items-start w-full gap-6 md:flex-row md:flex-wrap"
+        }
+      >
         {ABOUT.whyChooseAIcana.list!.map((item, index) => {
           return (
             <li
               key={index}
               className={
-                "flex flex-col items-center justify-center gap-y-5 border p-10 rounded-lg shadow-card-default"
+                "flex flex-col items-center justify-center gap-y-5 border p-10 rounded-lg shadow-card-default md:h-[350px] md:flex-1"
               }
             >
               <div className={"w-full flex items-center gap-4"}>

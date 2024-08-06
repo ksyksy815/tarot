@@ -1,7 +1,7 @@
 import BasicPage from "@/components/BasicPage";
+import ServiceHero from "@/screens/services/ServiceHero";
 import Services from "@/screens/services/Services";
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Our Services | AICana";
@@ -40,24 +40,11 @@ export async function generateMetadata(): Promise<Metadata> {
 const Page = () => {
   return (
     <BasicPage>
-      <section className={"relative h-[640px] max-h-[816px] w-full"}>
-        <Image
-          src={"/images/services.png"}
-          fill={true}
-          alt={"Services"}
-          className={"h-full w-full object-cover"}
-        />
+      <ServiceHero />
 
-        <p
-          className={
-            " h-[250px] w-[250px] grid place-content-center text-center text-white absolute top-1/2 left-1/2  translate-x-[-50%] translate-y-[-50%] text-5xl border border-white rounded-full bg-white/20 font-serif italic"
-          }
-        >
-          AICana
-        </p>
-      </section>
-
-      <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-5`}>
+      <section
+        className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[40px] xl:px-0`}
+      >
         <h1 className={`text-5xl font-bold`}>{`Our Tarot Reading Services`}</h1>
         <p
           className={"text-xl"}

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
 import Image from "next/image";
 import Link from "next/link";
+
 const HeroSection = () => {
   return (
     <section

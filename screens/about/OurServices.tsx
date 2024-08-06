@@ -4,7 +4,9 @@ import Link from "next/link";
 
 const OurServices = () => {
   return (
-    <section className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[10vw]`}>
+    <section
+      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[40px] xl:px-0`}
+    >
       <h2 className={"text-4xl font-bold"}>
         {ABOUT.ourTarotReadingServices.title}
       </h2>

@@ -3,7 +3,9 @@ import { SERVICES } from "./constants";
 
 const Services = () => {
   return (
-    <section className={`w-full flex flex-col xl:flex-row gap-10 px-10 pb-20`}>
+    <section
+      className={`w-full flex flex-col xl:flex-row gap-10 px-[40px] pb-20`}
+    >
       {SERVICES.map((service) => (
         <SelectSpread
           key={service.spreadType}
