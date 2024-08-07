@@ -7,234 +7,203 @@ export const tarotCards: TarotCard[] = [
     type: "Major Arcana",
     image: "/images/theFool.png",
     index: 0,
+    keywords: ["beginnings", "innocence", "spontaneity", "free spirit"],
   },
   {
     name: "The Magician",
     type: "Major Arcana",
     image: "/images/theMagician.png",
     index: 1,
+    keywords: ["manifestation", "resourcefulness", "power", "inspired action"],
   },
   {
     name: "The High Priestess",
     type: "Major Arcana",
     image: "/images/theHighPriestess.png",
     index: 2,
+    keywords: [
+      "intuition",
+      "sacred knowledge",
+      "divine feminine",
+      "subconscious mind",
+    ],
   },
   {
     name: "The Empress",
     type: "Major Arcana",
     image: "/images/theEmpress.png",
     index: 3,
+    keywords: ["femininity", "beauty", "nature", "nurturing", "abundance"],
   },
   {
     name: "The Emperor",
     type: "Major Arcana",
     image: "/images/theEmperor.png",
     index: 4,
+    keywords: ["authority", "establishment", "structure", "control"],
   },
   {
     name: "The Hierophant",
     type: "Major Arcana",
     image: "/images/theHierophant.png",
     index: 5,
+    keywords: [
+      "spiritual wisdom",
+      "religious beliefs",
+      "conformity",
+      "tradition",
+      "institutions",
+    ],
   },
   {
     name: "The Lovers",
     type: "Major Arcana",
     image: "/images/theLovers.png",
     index: 6,
+    keywords: [
+      "love",
+      "harmony",
+      "relationships",
+      "values alignment",
+      "choices",
+    ],
   },
   {
     name: "The Chariot",
     type: "Major Arcana",
     image: "/images/theChariot.png",
     index: 7,
+    keywords: ["control", "willpower", "success", "action", "determination"],
   },
   {
     name: "Strength",
     type: "Major Arcana",
     image: "/images/theSstrength.png",
     index: 8,
+    keywords: ["strength", "courage", "persuasion", "influence", "compassion"],
   },
   {
     name: "The Hermit",
     type: "Major Arcana",
     image: "/images/theHermit.png",
     index: 9,
+    keywords: [
+      "soul-searching",
+      "introspection",
+      "being alone",
+      "inner guidance",
+    ],
   },
   {
     name: "Wheel of Fortune",
     type: "Major Arcana",
     image: "/images/wheelOfFortune.png",
     index: 10,
+    keywords: [
+      "good luck",
+      "karma",
+      "life cycles",
+      "destiny",
+      "a turning point",
+    ],
   },
   {
     name: "Justice",
     type: "Major Arcana",
     image: "/images/justice.png",
     index: 11,
+    keywords: ["justice", "fairness", "truth", "cause and effect", "law"],
   },
   {
     name: "The Hanged Man",
     type: "Major Arcana",
     image: "/images/theHangedMan.png",
     index: 12,
+    keywords: ["pause", "surrender", "letting go", "new perspectives"],
   },
   {
     name: "Death",
     type: "Major Arcana",
     image: "/images/death.png",
     index: 13,
+    keywords: ["endings", "change", "transformation", "transition"],
   },
   {
     name: "Temperance",
     type: "Major Arcana",
     image: "/images/temperance.png",
     index: 14,
+    keywords: ["balance", "moderation", "patience", "purpose"],
   },
   {
     name: "The Devil",
     type: "Major Arcana",
     image: "/images/theDevil.png",
     index: 15,
+    keywords: [
+      "shadow self",
+      "attachment",
+      "addiction",
+      "restriction",
+      "sexuality",
+    ],
   },
   {
     name: "The Tower",
     type: "Major Arcana",
     image: "/images/theTower.png",
     index: 16,
+    keywords: ["sudden change", "upheaval", "chaos", "revelation", "awakening"],
   },
   {
     name: "The Star",
     type: "Major Arcana",
     image: "/images/theStar.png",
     index: 17,
+    keywords: ["hope", "faith", "purpose", "renewal", "spirituality"],
   },
   {
     name: "The Moon",
     type: "Major Arcana",
     image: "/images/theMoon.png",
     index: 18,
+    keywords: ["illusion", "fear", "anxiety", "subconscious", "intuition"],
   },
   {
     name: "The Sun",
     type: "Major Arcana",
     image: "/images/theSun.png",
     index: 19,
+    keywords: ["positivity", "fun", "warmth", "success", "vitality"],
   },
   {
     name: "Judgement",
     type: "Major Arcana",
     image: "/images/judgement.png",
     index: 20,
+    keywords: ["judgement", "rebirth", "inner calling", "absolution"],
   },
   {
     name: "The World",
     type: "Major Arcana",
     image: "/images/theWorld.png",
     index: 21,
+    keywords: ["completion", "integration", "accomplishment", "travel"],
   },
   // Minor Arcana - Wands
-  {
-    name: "Ace of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 1,
-    image: "/images/Ace of Wands.png",
-    index: 22,
-  },
-  {
-    name: "Two of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 2,
-    image: "/images/Two of Wands.png",
-    index: 23,
-  },
-  {
-    name: "Three of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 3,
-    image: "/images/Three of Wands.png",
-    index: 24,
-  },
-  {
-    name: "Four of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 4,
-    image: "/images/Four of Wands.png",
-    index: 25,
-  },
-  {
-    name: "Five of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 5,
-    image: "/images/Five of Wands.png",
-    index: 26,
-  },
-  {
-    name: "Six of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 6,
-    image: "/images/Six of Wands.png",
-    index: 27,
-  },
-  {
-    name: "Seven of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 7,
-    image: "/images/Seven of Wands.png",
-    index: 28,
-  },
-  {
-    name: "Eight of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 8,
-    image: "/images/Eight of Wands.png",
-    index: 29,
-  },
-  {
-    name: "Nine of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 9,
-    image: "/images/Nine of Wands.png",
-    index: 30,
-  },
-  {
-    name: "Ten of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    number: 10,
-    image: "/images/Ten of Wands.png",
-    index: 31,
-  },
-  {
-    name: "Page of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    image: "/images/Page of Wands.png",
-    index: 32,
-  },
-  {
-    name: "Knight of Wands",
-    type: "Minor Arcana",
-    suit: "Wands",
-    image: "/images/Knight of Wands.png",
-    index: 33,
-  },
   {
     name: "Queen of Wands",
     type: "Minor Arcana",
     suit: "Wands",
     image: "/images/Queen of Wands.png",
     index: 34,
+    keywords: [
+      "courage",
+      "confidence",
+      "independence",
+      "social butterfly",
+      "determination",
+    ],
   },
   {
     name: "King of Wands",
@@ -242,6 +211,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Wands",
     image: "/images/King of Wands.png",
     index: 35,
+    keywords: ["natural-born leader", "vision", "entrepreneur", "honor"],
   },
   // Minor Arcana - Cups
   {
@@ -251,6 +221,7 @@ export const tarotCards: TarotCard[] = [
     number: 1,
     image: "/images/Ace of Cups.png",
     index: 36,
+    keywords: ["love", "new relationships", "compassion", "creativity"],
   },
   {
     name: "Two of Cups",
@@ -259,6 +230,7 @@ export const tarotCards: TarotCard[] = [
     number: 2,
     image: "/images/Two of Cups.png",
     index: 37,
+    keywords: ["unified love", "partnership", "mutual attraction"],
   },
   {
     name: "Three of Cups",
@@ -267,6 +239,7 @@ export const tarotCards: TarotCard[] = [
     number: 3,
     image: "/images/Three of Cups.png",
     index: 38,
+    keywords: ["celebration", "friendship", "creativity", "collaborations"],
   },
   {
     name: "Four of Cups",
@@ -275,6 +248,7 @@ export const tarotCards: TarotCard[] = [
     number: 4,
     image: "/images/Four of Cups.png",
     index: 39,
+    keywords: ["meditation", "contemplation", "apathy", "reevaluation"],
   },
   {
     name: "Five of Cups",
@@ -283,6 +257,7 @@ export const tarotCards: TarotCard[] = [
     number: 5,
     image: "/images/Five of Cups.png",
     index: 40,
+    keywords: ["regret", "failure", "disappointment", "pessimism"],
   },
   {
     name: "Six of Cups",
@@ -291,6 +266,7 @@ export const tarotCards: TarotCard[] = [
     number: 6,
     image: "/images/Six of Cups.png",
     index: 41,
+    keywords: ["revisiting the past", "childhood memories", "innocence", "joy"],
   },
   {
     name: "Seven of Cups",
@@ -299,6 +275,7 @@ export const tarotCards: TarotCard[] = [
     number: 7,
     image: "/images/Seven of Cups.png",
     index: 42,
+    keywords: ["opportunities", "choices", "wishful thinking", "illusion"],
   },
   {
     name: "Eight of Cups",
@@ -307,6 +284,7 @@ export const tarotCards: TarotCard[] = [
     number: 8,
     image: "/images/Eight of Cups.png",
     index: 43,
+    keywords: ["disappointment", "abandonment", "withdrawal", "escapism"],
   },
   {
     name: "Nine of Cups",
@@ -315,6 +293,7 @@ export const tarotCards: TarotCard[] = [
     number: 9,
     image: "/images/Nine of Cups.png",
     index: 44,
+    keywords: ["contentment", "satisfaction", "gratitude", "wish come true"],
   },
   {
     name: "Ten of Cups",
@@ -323,6 +302,7 @@ export const tarotCards: TarotCard[] = [
     number: 10,
     image: "/images/Ten of Cups.png",
     index: 45,
+    keywords: ["divine love", "blissful relationships", "harmony", "alignment"],
   },
   {
     name: "Page of Cups",
@@ -330,6 +310,12 @@ export const tarotCards: TarotCard[] = [
     suit: "Cups",
     image: "/images/Page of Cups.png",
     index: 46,
+    keywords: [
+      "creative opportunities",
+      "intuitive messages",
+      "curiosity",
+      "possibility",
+    ],
   },
   {
     name: "Knight of Cups",
@@ -337,6 +323,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Cups",
     image: "/images/Knight of Cups.png",
     index: 47,
+    keywords: ["romance", "charm", "imagination", "beauty"],
   },
   {
     name: "Queen of Cups",
@@ -344,6 +331,13 @@ export const tarotCards: TarotCard[] = [
     suit: "Cups",
     image: "/images/Queen of Cups.png",
     index: 48,
+    keywords: [
+      "compassionate",
+      "caring",
+      "emotionally stable",
+      "intuitive",
+      "in flow",
+    ],
   },
   {
     name: "King of Cups",
@@ -351,6 +345,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Cups",
     image: "/images/King of Cups.png",
     index: 49,
+    keywords: ["emotionally balanced", "compassion", "diplomacy"],
   },
   // Minor Arcana - Swords
   {
@@ -360,6 +355,7 @@ export const tarotCards: TarotCard[] = [
     number: 1,
     image: "/images/Ace of Swords.png",
     index: 50,
+    keywords: ["breakthrough", "clarity", "sharp mind"],
   },
   {
     name: "Two of Swords",
@@ -368,6 +364,12 @@ export const tarotCards: TarotCard[] = [
     number: 2,
     image: "/images/Two of Swords.png",
     index: 51,
+    keywords: [
+      "difficult decisions",
+      "weighing up options",
+      "an impasse",
+      "avoidance",
+    ],
   },
   {
     name: "Three of Swords",
@@ -376,6 +378,7 @@ export const tarotCards: TarotCard[] = [
     number: 3,
     image: "/images/Three of Swords.png",
     index: 52,
+    keywords: ["heartbreak", "emotional pain", "sorrow", "grief", "hurt"],
   },
   {
     name: "Four of Swords",
@@ -384,6 +387,13 @@ export const tarotCards: TarotCard[] = [
     number: 4,
     image: "/images/Four of Swords.png",
     index: 53,
+    keywords: [
+      "rest",
+      "relaxation",
+      "meditation",
+      "contemplation",
+      "recuperation",
+    ],
   },
   {
     name: "Five of Swords",
@@ -392,6 +402,13 @@ export const tarotCards: TarotCard[] = [
     number: 5,
     image: "/images/Five of Swords.png",
     index: 54,
+    keywords: [
+      "conflict",
+      "disagreements",
+      "competition",
+      "defeat",
+      "winning at all costs",
+    ],
   },
   {
     name: "Six of Swords",
@@ -400,6 +417,7 @@ export const tarotCards: TarotCard[] = [
     number: 6,
     image: "/images/Six of Swords.png",
     index: 55,
+    keywords: ["transition", "change", "rite of passage", "releasing baggage"],
   },
   {
     name: "Seven of Swords",
@@ -408,6 +426,12 @@ export const tarotCards: TarotCard[] = [
     number: 7,
     image: "/images/Seven of Swords.png",
     index: 56,
+    keywords: [
+      "betrayal",
+      "deception",
+      "getting away with something",
+      "acting strategically",
+    ],
   },
   {
     name: "Eight of Swords",
@@ -416,6 +440,12 @@ export const tarotCards: TarotCard[] = [
     number: 8,
     image: "/images/Eight of Swords.png",
     index: 57,
+    keywords: [
+      "negative thoughts",
+      "self-imposed restriction",
+      "imprisonment",
+      "victim mentality",
+    ],
   },
   {
     name: "Nine of Swords",
@@ -424,6 +454,7 @@ export const tarotCards: TarotCard[] = [
     number: 9,
     image: "/images/Nine of Swords.png",
     index: 58,
+    keywords: ["anxiety", "worry", "fear", "depression", "nightmares"],
   },
   {
     name: "Ten of Swords",
@@ -432,6 +463,7 @@ export const tarotCards: TarotCard[] = [
     number: 10,
     image: "/images/Ten of Swords.png",
     index: 59,
+    keywords: ["painful endings", "deep wounds", "betrayal", "loss", "crisis"],
   },
   {
     name: "Page of Swords",
@@ -439,6 +471,12 @@ export const tarotCards: TarotCard[] = [
     suit: "Swords",
     image: "/images/Page of Swords.png",
     index: 60,
+    keywords: [
+      "new ideas",
+      "curiosity",
+      "thirst for knowledge",
+      "new ways of communicating",
+    ],
   },
   {
     name: "Knight of Swords",
@@ -446,6 +484,12 @@ export const tarotCards: TarotCard[] = [
     suit: "Swords",
     image: "/images/Knight of Swords.png",
     index: 61,
+    keywords: [
+      "ambitious",
+      "action-oriented",
+      "driven to succeed",
+      "fast-thinking",
+    ],
   },
   {
     name: "Queen of Swords",
@@ -453,6 +497,12 @@ export const tarotCards: TarotCard[] = [
     suit: "Swords",
     image: "/images/Queen of Swords.png",
     index: 62,
+    keywords: [
+      "independent",
+      "unbiased judgement",
+      "clear boundaries",
+      "direct communication",
+    ],
   },
   {
     name: "King of Swords",
@@ -460,6 +510,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Swords",
     image: "/images/King of Swords.png",
     index: 63,
+    keywords: ["mental clarity", "intellectual power", "authority", "truth"],
   },
   // Minor Arcana - Pentacles
   {
@@ -469,6 +520,7 @@ export const tarotCards: TarotCard[] = [
     number: 1,
     image: "/images/Ace of Pentacles.png",
     index: 64,
+    keywords: ["manifestation", "new financial opportunity", "prosperity"],
   },
   {
     name: "Two of Pentacles",
@@ -477,6 +529,12 @@ export const tarotCards: TarotCard[] = [
     number: 2,
     image: "/images/Two of Pentacles.png",
     index: 65,
+    keywords: [
+      "multiple priorities",
+      "time management",
+      "prioritisation",
+      "adaptability",
+    ],
   },
   {
     name: "Three of Pentacles",
@@ -485,6 +543,7 @@ export const tarotCards: TarotCard[] = [
     number: 3,
     image: "/images/Three of Pentacles.png",
     index: 66,
+    keywords: ["teamwork", "collaboration", "learning", "implementation"],
   },
   {
     name: "Four of Pentacles",
@@ -493,6 +552,13 @@ export const tarotCards: TarotCard[] = [
     number: 4,
     image: "/images/Four of Pentacles.png",
     index: 67,
+    keywords: [
+      "saving money",
+      "security",
+      "conservatism",
+      "scarcity",
+      "control",
+    ],
   },
   {
     name: "Five of Pentacles",
@@ -501,6 +567,13 @@ export const tarotCards: TarotCard[] = [
     number: 5,
     image: "/images/Five of Pentacles.png",
     index: 68,
+    keywords: [
+      "financial loss",
+      "poverty",
+      "lack mindset",
+      "isolation",
+      "worry",
+    ],
   },
   {
     name: "Six of Pentacles",
@@ -509,6 +582,13 @@ export const tarotCards: TarotCard[] = [
     number: 6,
     image: "/images/Six of Pentacles.png",
     index: 69,
+    keywords: [
+      "giving",
+      "receiving",
+      "sharing wealth",
+      "generosity",
+      "charity",
+    ],
   },
   {
     name: "Seven of Pentacles",
@@ -517,6 +597,12 @@ export const tarotCards: TarotCard[] = [
     number: 7,
     image: "/images/Seven of Pentacles.png",
     index: 70,
+    keywords: [
+      "long-term view",
+      "sustainable results",
+      "perseverance",
+      "investment",
+    ],
   },
   {
     name: "Eight of Pentacles",
@@ -525,6 +611,12 @@ export const tarotCards: TarotCard[] = [
     number: 8,
     image: "/images/Eight of Pentacles.png",
     index: 71,
+    keywords: [
+      "apprenticeship",
+      "repetitive tasks",
+      "mastery",
+      "skill development",
+    ],
   },
   {
     name: "Nine of Pentacles",
@@ -533,6 +625,12 @@ export const tarotCards: TarotCard[] = [
     number: 9,
     image: "/images/Nine of Pentacles.png",
     index: 72,
+    keywords: [
+      "abundance",
+      "luxury",
+      "self-sufficiency",
+      "financial independence",
+    ],
   },
   {
     name: "Ten of Pentacles",
@@ -541,6 +639,13 @@ export const tarotCards: TarotCard[] = [
     number: 10,
     image: "/images/Ten of Pentacles.png",
     index: 73,
+    keywords: [
+      "wealth",
+      "financial security",
+      "family",
+      "long-term success",
+      "contribution",
+    ],
   },
   {
     name: "Page of Pentacles",
@@ -548,6 +653,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Pentacles",
     image: "/images/Page of Pentacles.png",
     index: 74,
+    keywords: ["manifestation", "financial opportunity", "skill development"],
   },
   {
     name: "Knight of Pentacles",
@@ -555,6 +661,7 @@ export const tarotCards: TarotCard[] = [
     suit: "Pentacles",
     image: "/images/Knight of Pentacles.png",
     index: 75,
+    keywords: ["hard work", "productivity", "routine", "conservatism"],
   },
   {
     name: "Queen of Pentacles",
@@ -562,6 +669,12 @@ export const tarotCards: TarotCard[] = [
     suit: "Pentacles",
     image: "/images/Queen of Pentacles.png",
     index: 76,
+    keywords: [
+      "nurturing",
+      "practical",
+      "providing financially",
+      "working parent",
+    ],
   },
   {
     name: "King of Pentacles",
@@ -569,6 +682,14 @@ export const tarotCards: TarotCard[] = [
     suit: "Pentacles",
     image: "/images/King of Pentacles.png",
     index: 77,
+    keywords: [
+      "wealth",
+      "business",
+      "leadership",
+      "security",
+      "discipline",
+      "abundance",
+    ],
   },
 ];
 

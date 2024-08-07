@@ -1,8 +1,8 @@
 "use client";
 
 import { SPREAD_TYPES } from "@/constants/servicesIntro";
-import StepManager from "../home/StepManager";
 import PlayGroundContextProvider from "./PalyGroundContextProvider";
+import StepManager from "./StepManager";
 
 type Props = {
   type: keyof typeof SPREAD_TYPES;

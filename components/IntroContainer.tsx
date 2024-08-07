@@ -10,7 +10,7 @@ type Props = {
 
 const IntroContainer = ({ type }: Props) => {
   return (
-    <div className={`w-full flex flex-col gap-y-10`}>
+    <div className={`w-full flex flex-col gap-y-20`}>
       <section className={"relative h-[640px] max-h-[816px] w-full"}>
         <Image
           src={SPREAD_TYPES[type].imageUrl}

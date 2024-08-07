@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button";
 import useShuffledCards from "@/hooks/useShuffledCards";
 import { useContext } from "react";
-import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 import SelectCards from "../todays-fortune/SelectCards";
 import TodaysFortuneResult from "../todays-fortune/TodaysFortuneResult";
+import { PlayGroundContext } from "./PalyGroundContextProvider";
 
 const StepManager = () => {
   const { step, updateStep } = useContext(PlayGroundContext);

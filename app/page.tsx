@@ -1,8 +1,8 @@
 import BasicPage from "@/components/BasicPage";
 import OurServices from "@/screens/about/OurServices";
-import WhyChoose from "@/screens/about/WhyChoose";
 import HeroSection from "@/screens/home/HeroSection";
 import Testimonials from "@/screens/home/Testimonials";
+import WhyChoose from "@/screens/home/WhyChoose";
 
 export default function Home() {
   return (

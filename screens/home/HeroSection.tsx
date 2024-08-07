@@ -6,7 +6,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section
-      className={"relative w-full md:max-h-[80vh]"}
+      className={"relative w-full max-h-[816px]"}
       style={{ height: `calc(100svh - 80px)` }}
     >
       <div className={`relative h-full w-full`}>

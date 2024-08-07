@@ -3,6 +3,7 @@ export type TarotCard = {
   type: "Major Arcana" | "Minor Arcana";
   image: string;
   index: number;
+  keywords: string[];
   suit?: "Wands" | "Cups" | "Swords" | "Pentacles";
   number?: number;
 };
