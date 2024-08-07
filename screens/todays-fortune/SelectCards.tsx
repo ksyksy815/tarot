@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { TarotCard } from "@/types/tarotCard.type";
 import { useContext } from "react";
 import SelectionPanel from "../card-spread/SelectionPanel";
@@ -18,15 +17,9 @@ const SelectCards = ({ shuffledCards = [] }: Props) => {
 
   return (
     <div className={`relativew w-full flex flex-col items-start gap-y-5`}>
-      <div className={`w-full flex items-center px-5 justify-end`}>
-        <Button className={"self-end"} onClick={resetSelection}>
-          Reset
-        </Button>
-      </div>
-
       <CardDeck shuffledCards={shuffledCards} />
 
-      {selectedCards.length > 0 && <SelectionPanel />}
+      <SelectionPanel />
     </div>
   );
 };

@@ -4,15 +4,17 @@ import { Button } from "@/components/ui/button";
 import { SPREAD_TYPES } from "@/constants/servicesIntro";
 import useShuffledCards from "@/hooks/useShuffledCards";
 import { useContext } from "react";
+import Results from "../results/Results";
 import SelectCards from "../todays-fortune/SelectCards";
-import TodaysFortuneResult from "../todays-fortune/TodaysFortuneResult";
 import ContextForm from "./ContextForm";
 import { PlayGroundContext } from "./PalyGroundContextProvider";
 
 const StepManager = () => {
-  const { type, step, updateStep, updateContext } =
+  const { type, step, updateStep, context, updateContext } =
     useContext(PlayGroundContext);
   const { shuffledCards, shuffleCards } = useShuffledCards();
+
+  console.log("context: ", context);
 
   if (step === "INIT") {
     return (
@@ -38,17 +40,15 @@ const StepManager = () => {
     }
 
     return (
-      <>
+      <section className={"w-full px-10 xl:px-0 flex flex-col"}>
         <ContextForm />
-
-        <SelectCards shuffledCards={shuffledCards} />
-      </>
+        {context && <SelectCards shuffledCards={shuffledCards} />}
+      </section>
     );
   }
 
   // * "SHOW-RESULT"
-  // TODO: type에 따라 다른 결과 화면 레이아웃 보여주기
-  return <TodaysFortuneResult />;
+  return <Results />;
 };
 
 export default StepManager;

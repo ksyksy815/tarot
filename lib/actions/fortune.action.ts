@@ -42,27 +42,35 @@ export const getDoOrDontResult = async ({
 }) => {
   try {
     if (!context || !cardNames[0] || !cardNames[1]) {
-      throw new Error("Invalid parameters");
+      throw new Error(
+        "Invalid parameters: Either context or card names are missing! 🥲"
+      );
     }
 
-    const result = await openAi.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a tarot reader. Provide a detailed reading based on the provided context and the two tarot cards.",
-        },
-        { role: "user", content: `Context: ${context}` },
-        {
-          role: "user",
-          content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}.`,
-        },
-      ],
-    });
+    // const result = await openAi.chat.completions.create({
+    //   model: "gpt-4",
+    //   messages: [
+    //     {
+    //       role: "system",
+    //       content:
+    //         "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
+    //     },
+    //     { role: "user", content: `Context: ${context}` },
+    //     {
+    //       role: "user",
+    //       content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,
+    //     },
+    //   ],
+    // });
 
-    return result.choices[0].message.content;
-    //return "무조건 1번입니다 선생님 가시죠 선생님";
+    // return result.choices[0].message.content;
+    return `The Queen of Pentacles as your "do it" card suggests that moving to Germany can offer a nurturing and comfortable environment, as well as potential for financial stability. This card is often associated with practicality and security, perhaps indicating that a move to Germany might bring these aspects into your life. This is the card of a person who is able to create a welcoming and warm atmosphere and often represents prosperity in the material world. It may symbolize the wealth of new experiences and opportunities that moving to a new place can bring.
+
+On the other hand, the Five of Wands in the position of "don't do it" indicates conflict and competition. This could mean staying in Korea might present you with challenges, struggles, and a sense of fighting against the current. But remember, storms come to clear paths sometimes. What appears to be conflict can often result in healthy growth and progress over time. It's also possible this card is hinting at internal conflicts about this decision.
+
+The advice card, The Moon, asks for patience. This card often speaks to times of uncertainty, and when things aren't exactly as they appear. It is a call to trust your intuition, and perhaps to explore more deeply the discomfort attached to staying in Korea, as seen in the Five of Wands, as this could give you more insight into the root of your current situation.
+
+At this point, the cards favor moving to Germany, but they also suggest that there's more exploration needed before making your final decision. The Moon also implies that there may be factors that you're not currently aware of which need to be considered. You should take time to understand your fears, hopes, and the potential options before deciding on your course of action. Listen to your inner voice. The answers are within you.`;
   } catch (error: any) {
     handleError(error, "Failed to get Do or Don't");
   }

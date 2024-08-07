@@ -68,7 +68,7 @@ const PlayGroundContextProvider = ({
       case "todaysFortune":
         return 1;
       case "doOrDont":
-        return 2;
+        return 3;
       case "choices":
         return 3;
       default:
@@ -93,10 +93,14 @@ const PlayGroundContextProvider = ({
 
   const resetSelection = () => setSelectedCards([]);
 
-  const updateContext = (newContext: string) => setContext(newContext);
+  const updateContext = (newContext: string) => {
+    setContext(newContext);
+  };
 
-  const handleSubmit = (context: string = "") => {
+  const handleSubmit = () => {
     console.log("submitted data: ", selectedCards, context);
+
+    console.log();
 
     fetchFortune({
       type,

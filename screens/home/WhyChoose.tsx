@@ -16,7 +16,7 @@ const WhyChoose = () => {
             <li
               key={index}
               className={
-                "flex flex-col items-center justify-center gap-y-5 border p-10 rounded-lg shadow-card-default md:h-[350px] md:flex-1"
+                "flex flex-col items-center justify-center gap-y-6 border p-6 rounded-lg shadow-card-default md:min-h-[320px] md:flex-1"
               }
             >
               <div className={"w-full flex items-center gap-4"}>
