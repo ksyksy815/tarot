@@ -11,11 +11,13 @@ type PlayGroundContextType = {
   max: 1 | 2 | 3;
   selectedCards: TarotCard[];
   context: string;
+  updateContext: (newContext: string) => void;
   updateStep: (newStep: PlayGroundContextType["step"]) => void;
   updateSelectedCards: (newCard: TarotCard) => void;
   resetSelection: () => void;
   handleSubmit: (context?: string) => void;
   results: any;
+  isLoading: boolean;
 };
 
 export const PlayGroundContext = createContext<PlayGroundContextType>({
@@ -25,11 +27,13 @@ export const PlayGroundContext = createContext<PlayGroundContextType>({
   max: 1,
   selectedCards: [],
   context: "",
+  updateContext: () => {},
   updateStep: () => {},
   updateSelectedCards: () => {},
   resetSelection: () => {},
   handleSubmit: () => {},
   results: null,
+  isLoading: false,
 });
 
 const PlayGroundContextProvider = ({
@@ -43,6 +47,8 @@ const PlayGroundContextProvider = ({
 
   const [step, setStep] = useState<PlayGroundContextType["step"]>("INIT");
   const [selectedCards, setSelectedCards] = useState<TarotCard[]>([]);
+
+  const [context, setContext] = useState<string>("");
 
   const min = () => {
     switch (type) {
@@ -87,6 +93,8 @@ const PlayGroundContextProvider = ({
 
   const resetSelection = () => setSelectedCards([]);
 
+  const updateContext = (newContext: string) => setContext(newContext);
+
   const handleSubmit = (context: string = "") => {
     console.log("submitted data: ", selectedCards, context);
 
@@ -107,12 +115,14 @@ const PlayGroundContextProvider = ({
         min: min(),
         max: max(),
         selectedCards,
-        context: "",
+        context,
+        updateContext,
         updateStep,
         updateSelectedCards,
         resetSelection,
         handleSubmit,
         results: data,
+        isLoading: status === "pending",
       }}
     >
       {children}

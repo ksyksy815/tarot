@@ -53,6 +53,8 @@ const useFetchFortune = () => {
     //refetch();
   };
 
+  console.log(data);
+
   return {
     data,
     status,

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
 const TodaysFortuneResult = () => {
-  const { selectedCards, results } = useContext(PlayGroundContext);
+  const { isLoading, selectedCards, results } = useContext(PlayGroundContext);
 
   return (
     <div
@@ -16,7 +16,7 @@ const TodaysFortuneResult = () => {
           className={`relative w-full max-w-[832px] h-screen max-h-[1456px]`}
         >
           <div
-            className={`relative w-full h-[80vh] max-h-[1456px] bg-stone-200`}
+            className={`relative w-full h-[80vh] max-h-[1456px] bg-slate-200`}
           >
             <Image
               src={card.image}
@@ -34,7 +34,7 @@ const TodaysFortuneResult = () => {
               }
             >
               {card.keywords.map((keyword) => (
-                <li key={keyword} className={"text-stone-400 text-xs"}>
+                <li key={keyword} className={"text-slate-400 text-xs"}>
                   {`#${keyword}`}
                 </li>
               ))}

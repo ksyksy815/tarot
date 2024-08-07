@@ -32,10 +32,6 @@ const IntroContainer = ({ type }: Props) => {
         </h1>
       </section>
 
-      <section className={"w-full flex flex-col gap-10 px-[40px] xl:px-0"}>
-        <p className={"text-lg"}>{SPREAD_TYPES[type].description || "-"}</p>
-      </section>
-
       <PlayGround type={type} />
     </div>
   );

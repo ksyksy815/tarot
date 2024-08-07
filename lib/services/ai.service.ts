@@ -1,5 +1,7 @@
 const apiUrls = {
   todaysFortune: `/api/v1/fortune/todaysFortune`,
+  doOrDont: `/api/v1/fortune/doOrDont`,
+  choices: `/api/v1/fortune/choices`,
 };
 
 class AiService {
@@ -10,7 +12,20 @@ class AiService {
     }).then((res) => res.json());
   };
 
-  getDoOrDont = async (cardNames: string[], context: string) => {};
+  getDoOrDont = async (cardNames: string[], context: string) => {
+    console.log(
+      "client 2. AiService의 getDoOrDont cardName: ",
+      cardNames,
+      context
+    );
+
+    return await fetch(
+      `${apiUrls.doOrDont}?cardNames=${cardNames.join(",")}&context=${context}`,
+      {
+        method: "GET",
+      }
+    ).then((res) => res.json());
+  };
 
   getChoices = async (cardNames: string[], context: string) => {};
 }

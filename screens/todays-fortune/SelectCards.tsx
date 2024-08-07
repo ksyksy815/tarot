@@ -11,6 +11,8 @@ type Props = {
   shuffledCards: TarotCard[];
 };
 
+// TODO: selection panel animation
+
 const SelectCards = ({ shuffledCards = [] }: Props) => {
   const { selectedCards, resetSelection } = useContext(PlayGroundContext);
 

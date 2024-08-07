@@ -3,9 +3,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer
-      className={"flex justify-center bg-stone-200 lg:h-[30vh]  p-10 w-full"}
-    >
+    <footer className={"flex justify-center bg-slate-200 p-10 w-full"}>
       <div className={"flex flex-col items-start max-w-screen-xl w-full "}>
         <div className={`flex flex-col w-full gap-y-10`}>
           <div className={`flex flex-col gap-10`}>
@@ -28,7 +26,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className={"text-stone-800"}>
+          <p className={"text-slate-800"}>
             &copy; 2024 AICana. All rights reserved.
           </p>
         </div>
