@@ -26,14 +26,20 @@ const SelectionHelper = () => {
   return (
     <div className={"w-full flex flex-col items-start flex-1"}>
       <div className={`flex items-center gap-x-2`}>
-        <span className={`${step > 0 ? "line-through italic opacity-80" : ""}`}>
+        <span
+          className={`${
+            step > 0 ? "line-through italic opacity-80 text-xs" : ""
+          }`}
+        >
           {GUIDE_MESSAGES[0]}
         </span>
       </div>
       {step >= 1 && (
         <div className={`flex items-center gap-x-2`}>
           <span
-            className={`${step > 1 ? "line-through italic opacity-80" : ""}`}
+            className={`${
+              step > 1 ? "line-through italic opacity-80 text-xs" : ""
+            }`}
           >
             {GUIDE_MESSAGES[1]}
           </span>
@@ -43,7 +49,9 @@ const SelectionHelper = () => {
       {step >= 2 && (
         <div className={`flex items-center gap-x-2`}>
           <span
-            className={`${step > 2 ? "line-through italic opacity-80" : ""}`}
+            className={`${
+              step > 2 ? "line-through italic opacity-80 text-xs" : ""
+            }`}
           >
             {GUIDE_MESSAGES[2]}
           </span>

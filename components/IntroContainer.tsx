@@ -12,12 +12,15 @@ type Props = {
 const IntroContainer = ({ type }: Props) => {
   return (
     <div className={`w-full flex flex-col gap-y-20`}>
-      <section className={"relative h-[640px] max-h-[816px] w-full"}>
+      <section
+        className={"relative h-[640px] w-full"}
+        style={{ maxHeight: `calc(100vh - 80px)` }}
+      >
         <Image
           src={SPREAD_TYPES[type].imageUrl}
           fill={true}
           alt={"About"}
-          className={"h-full w-full object-cover"}
+          className={"w-full object-cover"}
         />
 
         <div

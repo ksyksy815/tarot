@@ -1,12 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { FormEvent, useContext, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { FormEvent, useContext, useRef, useState } from "react";
 import { FaCommentDots } from "react-icons/fa";
 import { PlayGroundContext } from "./PalyGroundContextProvider";
 
 const ContextForm = () => {
-  const { updateContext, context } = useContext(PlayGroundContext);
+  const questionRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  const { updateContext } = useContext(PlayGroundContext);
   const [userInput, setUserInput] = useState("");
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.from(questionRef.current, { opacity: 0, y: -10, duration: 0.5 });
+    tl.from(formRef.current, { opacity: 0, y: 3, duration: 0.5 }, "<0.5s");
+  });
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -15,7 +26,7 @@ const ContextForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={"flex flex-col gap-y-6"}>
-      <div className={"flex flex-col md:flex-row gap-4"}>
+      <div ref={questionRef} className={"flex flex-col md:flex-row gap-4"}>
         <FaCommentDots size={48} />
 
         <div className={"flex flex-col gap-y-2"}>
@@ -29,7 +40,7 @@ const ContextForm = () => {
         </div>
       </div>
 
-      <div className={"flex flex-col gap-4"}>
+      <div ref={formRef} className={"flex flex-col gap-4"}>
         <Textarea
           onChange={(e) => {
             const sanitizedValue = e.target.value

@@ -40,7 +40,7 @@ const StepManager = () => {
     }
 
     return (
-      <section className={"w-full px-[20px] xl:px-0 flex flex-col"}>
+      <section className={"w-full px-[20px] xl:px-0 flex flex-col gap-y-10"}>
         <ContextForm />
         {context && <SelectCards shuffledCards={shuffledCards} />}
       </section>

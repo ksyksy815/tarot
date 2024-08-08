@@ -1,6 +1,7 @@
 "use client";
 import { PlayGroundContext } from "@/screens/playGround/PalyGroundContextProvider";
 import { TarotCard } from "@/types/tarotCard.type";
+import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 
 type Props = {
@@ -26,11 +27,9 @@ const Card = ({ card }: Props) => {
 
   return (
     <div
-      className={`relative h-[100px] w-[60px] md:h-[250px] md:w-[150px] cursor-pointer rounded-lg transition-all duration-300 ${
-        isSelected
-          ? "bg-violet-300 shadow-card-selected"
-          : "shadow-card-default"
-      } hover:glow hover:translate-y-[-5px]`}
+      className={`relative h-[100px] w-[60px] md:h-[250px] md:w-[150px] cursor-pointer transition-all duration-300 hover:glow hover:translate-y-[-5px] rounded-lg overflow-hidden shadow-sm shadow-slate-900 ${
+        isSelected ? "translate-y-[-5px] " : ""
+      }`}
       onClick={() => {
         if (selectedCards.length === max && !isSelected) {
           setShowAlert(true);
@@ -39,6 +38,12 @@ const Card = ({ card }: Props) => {
         updateSelectedCards(card);
       }}
     >
+      <Image
+        src={"/images/tarot-back.png"}
+        fill={true}
+        alt={"back of tarot card"}
+      />
+
       {showAlert && (
         <div
           className={

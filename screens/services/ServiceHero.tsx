@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ServiceHero = () => {
   return (
-    <section className={`w-full`}>
+    <section className={`w-full`} style={{ maxHeight: `calc(100vh - 80px)` }}>
       <AuroraBackground>
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}

@@ -66,7 +66,7 @@ const config = {
       boxShadow: {
         "card-default": "8px 8px 5px #c9cccf, -3px -3px 5px #ffffff",
         "card-selected":
-          "10px 10px 10px #c9cccf, 0 -10px 30px #c9cccf, inset 5px 5px 10px #ffffff",
+          "10px 10px 10px #c9cccf, 0 -10px 30px #c9cccf, 5px 5px 10px #ffffff",
       },
       fontFamily: {
         amatic: ["Amatic SC"],

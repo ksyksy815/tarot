@@ -45,7 +45,7 @@ const CardResult = ({
   return (
     <>
       <div
-        className={`relative w-full max-w-[376px] h-[80vh] max-h-[658px] rounded-lg overflow-hidden shadow-md shadow-slate-500 aspect-[4/7] hover:translate-y-[-2px]`}
+        className={`relative w-full max-w-[376px] h-[80vh rounded-lg overflow-hidden shadow-lg shadow-slate-500 aspect-[4/7] hover:translate-y-[-2px]`}
       >
         <Image
           ref={contentRef}
