@@ -14,8 +14,6 @@ const StepManager = () => {
     useContext(PlayGroundContext);
   const { shuffledCards, shuffleCards } = useShuffledCards();
 
-  console.log("context: ", context);
-
   if (step === "INIT") {
     return (
       <section className={"w-full flex flex-col gap-10 px-[20px] xl:px-0"}>

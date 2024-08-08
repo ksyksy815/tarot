@@ -52,10 +52,12 @@ export const getDoOrDontResult = async ({
       messages: [
         {
           role: "system",
-          content:
-            "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
+          content: `You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.`,
         },
-        { role: "user", content: `Context: ${context}` },
+        {
+          role: "user",
+          content: `Context: ${context}`,
+        },
         {
           role: "user",
           content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,

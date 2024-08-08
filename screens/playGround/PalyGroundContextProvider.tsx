@@ -98,10 +98,6 @@ const PlayGroundContextProvider = ({
   };
 
   const handleSubmit = () => {
-    console.log("submitted data: ", selectedCards, context);
-
-    console.log();
-
     fetchFortune({
       type,
       cardNames: selectedCards.map((card) => card.name),

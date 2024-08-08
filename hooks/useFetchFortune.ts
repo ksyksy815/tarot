@@ -14,7 +14,7 @@ const useFetchFortune = () => {
   });
   const [userContext, setUserContext] = useState<string>("");
 
-  const { data, refetch, status } = useQuery({
+  const { data, status } = useQuery({
     queryKey: [QUERY_KEYS.fortune.todaysFortune, params.type, params.cardNames],
     queryFn: async () => {
       if (!params.cardNames.length) return null;
@@ -23,7 +23,10 @@ const useFetchFortune = () => {
         case "todaysFortune":
           return aiService.getTodaysFortune(params.cardNames[0]);
         case "doOrDont":
-          return aiService.getDoOrDont(params.cardNames, userContext);
+          return aiService.getDoOrDont({
+            cardNames: params.cardNames,
+            context: userContext,
+          });
         default:
           return aiService.getChoices(params.cardNames, userContext);
       }
@@ -50,10 +53,7 @@ const useFetchFortune = () => {
     setParams({ type, cardNames });
     setUserContext(context);
     setEnabled(true);
-    //refetch();
   };
-
-  console.log(data);
 
   return {
     data,

@@ -12,7 +12,13 @@ class AiService {
     }).then((res) => res.json());
   };
 
-  getDoOrDont = async (cardNames: string[], context: string) => {
+  getDoOrDont = async ({
+    cardNames,
+    context,
+  }: {
+    cardNames: string[];
+    context: string;
+  }) => {
     console.log(
       "client 2. AiService의 getDoOrDont cardName: ",
       cardNames,

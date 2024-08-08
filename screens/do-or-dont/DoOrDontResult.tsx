@@ -33,6 +33,16 @@ const DoOrDontResult = () => {
       className={`flex flex-col items-center gap-10 xl:px-0`}
     >
       <section
+        className={`w-full flex flex-col px-[20px] md:flex-row xl:px-0 gap-5`}
+      >
+        <div className={"w-7 h-7"}>
+          <FaCommentDots size={28} />
+        </div>
+
+        <h2 className={"text-2xl font-semibold italic"}>{`"${context}"`}</h2>
+      </section>
+
+      <section
         className={
           "flex items-center w-full bg-slate-200 flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 px-10 rounded-lg"
         }
@@ -57,15 +67,9 @@ const DoOrDontResult = () => {
         ))}
       </section>
 
-      {isLoading && <Skeleton />}
-
       <section className={`w-full flex flex-col px-[20px] xl:px-0 gap-20`}>
-        <div
-          className={"flex flex-col md:flex-row gap-y-5 gap-x-3 md:items-start"}
-        >
-          <FaCommentDots size={28} />
-          <p className={"text-lg font-semibold italic"}>{`"${context}"`}</p>
-        </div>
+        {isLoading && <Skeleton />}
+
         {results && (
           <div
             className={`flex flex-col w-full gap-y-10 md:gap-y-10`}

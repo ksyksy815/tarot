@@ -19,10 +19,15 @@ const CardLabel = ({ cardName = "", keywords = [] }: Props) => {
   });
 
   return (
-    <div ref={cardRef} className={"w-full flex flex-col py-10 gap-y-4"}>
+    <div
+      ref={cardRef}
+      className={"w-full flex flex-col py-10 gap-y-4 text-center lg:text-left "}
+    >
       <p className={"text-4xl font-bold"}>{cardName}</p>
       <ul
-        className={"w-full flex items-center flex-wrap gap-x-2 font-semibold"}
+        className={
+          "w-full flex justify-center lg:justify-start items-center flex-wrap gap-x-2 font-semibold"
+        }
       >
         {keywords.map((keyword) => (
           <li key={keyword} className={"text-slate-600 text-sm"}>
