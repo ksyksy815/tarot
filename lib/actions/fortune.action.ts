@@ -47,33 +47,23 @@ export const getDoOrDontResult = async ({
       );
     }
 
-    // const result = await openAi.chat.completions.create({
-    //   model: "gpt-4",
-    //   messages: [
-    //     {
-    //       role: "system",
-    //       content:
-    //         "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
-    //     },
-    //     { role: "user", content: `Context: ${context}` },
-    //     {
-    //       role: "user",
-    //       content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,
-    //     },
-    //   ],
-    // });
+    const result = await openAi.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
+        },
+        { role: "user", content: `Context: ${context}` },
+        {
+          role: "user",
+          content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,
+        },
+      ],
+    });
 
-    // return result.choices[0].message.content;
-    return `Ace of Swords:
-This card represents breakthroughs, sharp minds, new ideas, clarity, success, and communication. It also symbolizes strength and the power to overcome adversity, exactly what you might need to cut through the financial fog. If you choose to sell all your stocks, it suggests that you're entering a new phase of understanding the stock market, finance, and investments. You will have clear insight and will make decisions based on logic and intellect. The Ace of Swords gives you the green light, signaling that now is a favorable time to sell if you have done careful thought and analysis.
-
-Two of Swords:
-This card suggests indecision, stalemate, and blocked emotions. If you decide not to sell your stocks at this time, you may ultimately be stuck in a state of indecision and confusion. It's important that you release any fear of confrontation or conflict, resulting in being at odds with what decisions to make next in terms of your investment in US stocks. This card may also suggest that you are trying to avoid making a decision, which can lead to stagnation.
-
-Ace of Pentacles:
-This card signifies new financial beginnings, opportunities, investments, wealth, health, and security. As an advice card, the Ace of Pentacles suggests that it might be wise to examine new avenues for investments, implying diversification rather than complete release of your stocks. It speaks of new ventures and suggests that you've got a magic touch when it comes to money. This card could also be advising taking a more grounded, cautious approach when dealing with your investments, to ensure financial prosperity and stability.
-
-Combining all cards: it seems to suggest that now could be an opportune time to sell, and explore newer investments (symbolized by the Ace of Pentacles). However, caution and careful thought are advised (as expressed by the Two of Swords)-- don't let indecisiveness freeze your actions, but also don't act hastily. Connect with your logic (Ace of Swords) and potentially look into diversifying your portfolio (Ace of Pentacles). As always, consult with a financial advisor along with this tarot reading for a comprehensive decision.`;
+    return result.choices[0].message.content;
   } catch (error: any) {
     handleError(error, "Failed to get Do or Don't");
   }
