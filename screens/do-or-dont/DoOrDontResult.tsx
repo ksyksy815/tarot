@@ -1,20 +1,23 @@
 import { Button } from "@/components/ui/button";
+import usePDFGenerator from "@/hooks/usePDFGenerator";
 import { renderMarkdown } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
+import { FaCommentDots } from "react-icons/fa";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 import CardResult from "./CardResult";
 import Skeleton from "./Skeleton";
 
 const CARD_REPRESENTATION = ["Do", "Don't", "Advice"];
 
-// TODO: Loading skeleton
-// TODO: Card revelation animation
 const DoOrDontResult = () => {
+  const resultPageRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const { isLoading, selectedCards, results } = useContext(PlayGroundContext);
+  const { isLoading, selectedCards, results, context } =
+    useContext(PlayGroundContext);
+  const { generatePDF } = usePDFGenerator();
 
   useGSAP(() => {
     const timeline = gsap.timeline({ stagger: 0.5 });
@@ -25,7 +28,10 @@ const DoOrDontResult = () => {
   });
 
   return (
-    <div className={`flex flex-col items-center gap-10 xl:px-0`}>
+    <div
+      ref={resultPageRef}
+      className={`flex flex-col items-center gap-10 xl:px-0`}
+    >
       <section
         className={
           "flex items-center w-full bg-slate-200 flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 px-10 rounded-lg"
@@ -54,6 +60,12 @@ const DoOrDontResult = () => {
       {isLoading && <Skeleton />}
 
       <section className={`w-full flex flex-col px-[20px] xl:px-0 gap-20`}>
+        <div
+          className={"flex flex-col md:flex-row gap-y-5 gap-x-3 md:items-start"}
+        >
+          <FaCommentDots size={28} />
+          <p className={"text-lg font-semibold italic"}>{`"${context}"`}</p>
+        </div>
         {results && (
           <div
             className={`flex flex-col w-full gap-y-10 md:gap-y-10`}
@@ -62,7 +74,12 @@ const DoOrDontResult = () => {
         )}
 
         <div className={"flex items-center w-full justify-end gap-x-2"}>
-          <Button variant={"outline"}>Copy</Button>
+          <Button
+            variant={"outline"}
+            onClick={() => generatePDF(resultPageRef)}
+          >
+            Save as PDF
+          </Button>
           <Button onClick={() => router.push("/services")}>
             Go back to Services
           </Button>

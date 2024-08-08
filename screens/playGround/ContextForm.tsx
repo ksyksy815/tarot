@@ -44,7 +44,7 @@ const ContextForm = () => {
         <Textarea
           onChange={(e) => {
             const sanitizedValue = e.target.value
-              .replace(/[^\w\s.,]/gi, "")
+              .replace(/[^\w\s?!.,:;'"\-=&%$()]/gi, "")
               .trim();
             setUserInput(sanitizedValue);
           }}
