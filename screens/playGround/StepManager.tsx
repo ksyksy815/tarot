@@ -18,7 +18,7 @@ const StepManager = () => {
 
   if (step === "INIT") {
     return (
-      <section className={"w-full flex flex-col gap-10 px-[40px] xl:px-0"}>
+      <section className={"w-full flex flex-col gap-10 px-[20px] xl:px-0"}>
         <p className={"text-lg"}>{SPREAD_TYPES[type].description || "-"}</p>
 
         <Button
@@ -40,7 +40,7 @@ const StepManager = () => {
     }
 
     return (
-      <section className={"w-full px-10 xl:px-0 flex flex-col"}>
+      <section className={"w-full px-[20px] xl:px-0 flex flex-col"}>
         <ContextForm />
         {context && <SelectCards shuffledCards={shuffledCards} />}
       </section>

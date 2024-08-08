@@ -118,6 +118,11 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        "skeleton-gradient": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
         aurora: {
           from: {
             backgroundPosition: "50% 50%, 50% 50%",

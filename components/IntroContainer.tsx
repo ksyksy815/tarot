@@ -3,6 +3,7 @@
 import { SPREAD_TYPES } from "@/constants/servicesIntro";
 import PlayGround from "@/screens/playGround/PlayGround";
 import Image from "next/image";
+import { SparklesCore } from "./ui/sparkles";
 
 type Props = {
   type: keyof typeof SPREAD_TYPES;
@@ -30,6 +31,14 @@ const IntroContainer = ({ type }: Props) => {
         >
           {SPREAD_TYPES[type].title || "-"}
         </h1>
+        <SparklesCore
+          background="transparent"
+          minSize={0.2}
+          maxSize={1}
+          particleDensity={20}
+          className={`w-full h-full`}
+          particleColor="#FFFFFF"
+        />
       </section>
 
       <PlayGround type={type} />

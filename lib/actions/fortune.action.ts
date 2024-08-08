@@ -47,30 +47,33 @@ export const getDoOrDontResult = async ({
       );
     }
 
-    const result = await openAi.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
-        },
-        { role: "user", content: `Context: ${context}` },
-        {
-          role: "user",
-          content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,
-        },
-      ],
-    });
+    // const result = await openAi.chat.completions.create({
+    //   model: "gpt-4",
+    //   messages: [
+    //     {
+    //       role: "system",
+    //       content:
+    //         "You are a tarot reader. Provide a detailed reading based on the provided context and the three tarot cards.",
+    //     },
+    //     { role: "user", content: `Context: ${context}` },
+    //     {
+    //       role: "user",
+    //       content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}.`,
+    //     },
+    //   ],
+    // });
 
-    return result.choices[0].message.content;
-    //     return `The Queen of Pentacles as your "do it" card suggests that moving to Germany can offer a nurturing and comfortable environment, as well as potential for financial stability. This card is often associated with practicality and security, perhaps indicating that a move to Germany might bring these aspects into your life. This is the card of a person who is able to create a welcoming and warm atmosphere and often represents prosperity in the material world. It may symbolize the wealth of new experiences and opportunities that moving to a new place can bring.
+    // return result.choices[0].message.content;
+    return `Ace of Swords:
+This card represents breakthroughs, sharp minds, new ideas, clarity, success, and communication. It also symbolizes strength and the power to overcome adversity, exactly what you might need to cut through the financial fog. If you choose to sell all your stocks, it suggests that you're entering a new phase of understanding the stock market, finance, and investments. You will have clear insight and will make decisions based on logic and intellect. The Ace of Swords gives you the green light, signaling that now is a favorable time to sell if you have done careful thought and analysis.
 
-    // On the other hand, the Five of Wands in the position of "don't do it" indicates conflict and competition. This could mean staying in Korea might present you with challenges, struggles, and a sense of fighting against the current. But remember, storms come to clear paths sometimes. What appears to be conflict can often result in healthy growth and progress over time. It's also possible this card is hinting at internal conflicts about this decision.
+Two of Swords:
+This card suggests indecision, stalemate, and blocked emotions. If you decide not to sell your stocks at this time, you may ultimately be stuck in a state of indecision and confusion. It's important that you release any fear of confrontation or conflict, resulting in being at odds with what decisions to make next in terms of your investment in US stocks. This card may also suggest that you are trying to avoid making a decision, which can lead to stagnation.
 
-    // The advice card, The Moon, asks for patience. This card often speaks to times of uncertainty, and when things aren't exactly as they appear. It is a call to trust your intuition, and perhaps to explore more deeply the discomfort attached to staying in Korea, as seen in the Five of Wands, as this could give you more insight into the root of your current situation.
+Ace of Pentacles:
+This card signifies new financial beginnings, opportunities, investments, wealth, health, and security. As an advice card, the Ace of Pentacles suggests that it might be wise to examine new avenues for investments, implying diversification rather than complete release of your stocks. It speaks of new ventures and suggests that you've got a magic touch when it comes to money. This card could also be advising taking a more grounded, cautious approach when dealing with your investments, to ensure financial prosperity and stability.
 
-    // At this point, the cards favor moving to Germany, but they also suggest that there's more exploration needed before making your final decision. The Moon also implies that there may be factors that you're not currently aware of which need to be considered. You should take time to understand your fears, hopes, and the potential options before deciding on your course of action. Listen to your inner voice. The answers are within you.`;
+Combining all cards: it seems to suggest that now could be an opportune time to sell, and explore newer investments (symbolized by the Ace of Pentacles). However, caution and careful thought are advised (as expressed by the Two of Swords)-- don't let indecisiveness freeze your actions, but also don't act hastily. Connect with your logic (Ace of Swords) and potentially look into diversifying your portfolio (Ace of Pentacles). As always, consult with a financial advisor along with this tarot reading for a comprehensive decision.`;
   } catch (error: any) {
     handleError(error, "Failed to get Do or Don't");
   }
