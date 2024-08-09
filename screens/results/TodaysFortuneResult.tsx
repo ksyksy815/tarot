@@ -1,55 +1,60 @@
+import { Button } from "@/components/ui/button";
+import usePDFGenerator from "@/hooks/usePDFGenerator";
 import { renderMarkdown } from "@/lib/utils";
-import Image from "next/image";
-import { useContext } from "react";
+import router from "next/router";
+import { useContext, useRef } from "react";
+import CardResult from "../do-or-dont/CardResult";
+import Skeleton from "../do-or-dont/Skeleton";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
 const TodaysFortuneResult = () => {
+  const resultPageRef = useRef<HTMLDivElement>(null);
+  const { generatePDF } = usePDFGenerator();
   const { isLoading, selectedCards, results } = useContext(PlayGroundContext);
 
   return (
     <div
-      className={`flex flex-col items-start md:flex-row gap-10 md:px-5 xl:px-0`}
+      ref={resultPageRef}
+      className={`flex flex-col md:flex-row gap-10 px-[20px]`}
     >
-      {selectedCards?.map((card) => (
+      {selectedCards?.map((card, index) => (
         <div
           key={card.name}
-          className={`relative w-full max-w-[832px] h-screen max-h-[1456px]`}
+          className={`relative flex flex-col items-center w-full gap-y-5`}
         >
-          <div
-            className={`relative w-full h-[80vh] max-h-[1456px] bg-slate-200`}
-          >
-            <Image
-              src={card.image}
-              fill={true}
-              alt={card.name}
-              className={"p-5 object-contain"}
-            />
-          </div>
-
-          <div className={"w-full flex flex-col p-10 gap-y-2"}>
-            <p className={"text-4xl font-bold"}>{card.name}</p>
-            <ul
-              className={
-                "w-full flex items-center flex-wrap gap-x-2 font-semibold"
-              }
-            >
-              {card.keywords.map((keyword) => (
-                <li key={keyword} className={"text-slate-400 text-xs"}>
-                  {`#${keyword}`}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h2
+            className={
+              "mb-2 font-serif italic font-bold text-5xl text-slate-800"
+            }
+          >{`Today's Fortune`}</h2>
+          <CardResult
+            imageUrl={card.image}
+            cardName={card.name}
+            keywords={card.keywords}
+          />
         </div>
       ))}
 
-      <section className={`w-full flex flex-col px-10 xl:px-0`}>
+      <section className={`w-full flex flex-col gap-y-10`}>
+        {isLoading && <Skeleton />}
         {results && (
           <div
             className={`flex flex-col w-full gap-y-10 md:gap-y-10`}
             dangerouslySetInnerHTML={renderMarkdown(results)}
           ></div>
         )}
+
+        <div className={"flex items-center w-full justify-end gap-x-2"}>
+          <Button
+            variant={"outline"}
+            onClick={() => generatePDF(resultPageRef)}
+          >
+            Save as PDF
+          </Button>
+          <Button onClick={() => router.push("/services")}>
+            Go back to Services
+          </Button>
+        </div>
       </section>
     </div>
   );

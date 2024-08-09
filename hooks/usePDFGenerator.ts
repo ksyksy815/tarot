@@ -23,18 +23,18 @@ const usePDFGenerator = () => {
       const xPosition = (pageWidth - imgWidth) / 2;
 
       // Add website name and URL
-      const websiteName = "AICana | AI Tarot Card Reader";
-      const websiteURL = "https://aicana.vercel.app";
+      // const websiteName = "AICana | AI Tarot Card Reader";
+      // const websiteURL = "https://aicana.vercel.app";
 
       // Set font size to 11 points
-      pdf.setFontSize(11);
-      pdf.setFont("helvetica");
+      // pdf.setFontSize(11);
+      // pdf.setFont("helvetica");
 
       // Add the website text at the bottom of the first page
-      pdf.text(websiteName, pageWidth / 2, pageHeight - 10, {
-        align: "center",
-      });
-      pdf.text(websiteURL, pageWidth / 2, pageHeight - 5, { align: "center" });
+      // pdf.text(websiteName, pageWidth / 2, pageHeight - 10, {
+      //   align: "center",
+      // });
+      // pdf.text(websiteURL, pageWidth / 2, pageHeight - 5, { align: "center" });
 
       // Add the image content
       pdf.addImage(imgData, "PNG", xPosition, position, imgWidth, imgHeight);
@@ -45,12 +45,12 @@ const usePDFGenerator = () => {
         pdf.addPage();
 
         // Add the website text at the bottom of each subsequent page
-        pdf.text(websiteName, 0, pageHeight - 10, {
-          align: "left",
-        });
-        pdf.text(websiteURL, 0, pageHeight - 5, {
-          align: "left",
-        });
+        // pdf.text(websiteName, 0, pageHeight - 10, {
+        //   align: "left",
+        // });
+        // pdf.text(websiteURL, 0, pageHeight - 5, {
+        //   align: "left",
+        // });
 
         pdf.addImage(imgData, "PNG", xPosition, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;

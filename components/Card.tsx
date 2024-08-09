@@ -39,7 +39,7 @@ const Card = ({ card }: Props) => {
       }}
     >
       <Image
-        src={"/images/tarot-back.png"}
+        src={"/images/tarot-back-sample.jpg"}
         fill={true}
         alt={"back of tarot card"}
       />
