@@ -4,7 +4,7 @@ import { TESTINONIALS } from "@/constants/testimonials";
 const Testimonials = () => {
   return (
     <section
-      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[40px] py-[60px] xl:px-0`}
+      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] py-[60px] xl:px-0`}
     >
       <h2 className={"text-3xl font-bold"}>What Out Clients Say</h2>
       <p>

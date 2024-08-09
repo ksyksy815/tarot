@@ -9,7 +9,7 @@ const MobileNav = () => {
         <RiMenu3Line size={24} />
       </SheetTrigger>
       <SheetContent>
-        <nav className={`mt-10 flex flex-col items-start gap-5`}>
+        <nav className={`mt-10 flex flex-col items-start text-left gap-5`}>
           <NavItems />
         </nav>
       </SheetContent>

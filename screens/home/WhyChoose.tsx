@@ -3,7 +3,7 @@ import { ABOUT } from "@/constants/about";
 const WhyChoose = () => {
   return (
     <section
-      className={`w-full flex flex-col gap-y-10 px-[40px] pb-[60px] xl:px-0`}
+      className={`w-full flex flex-col gap-y-10 px-[20px] pb-[60px] xl:px-0`}
     >
       <h2 className={"text-4xl font-bold"}>{ABOUT.whyChooseAIcana.title}</h2>
       <ul

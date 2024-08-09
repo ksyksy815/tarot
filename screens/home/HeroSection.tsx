@@ -34,9 +34,9 @@ const HeroSection = () => {
               "Empowering",
               "Transforming",
             ]}
-            className={"text-white"}
+            className={"ml-[-6px] text-white"}
           />
-          <span className={"ml-5"}>{`tarot with AICana`}</span>
+          <span className={""}>{`tarot with AICana`}</span>
         </h1>
 
         <p className={"mb-8 md:text-xl md:max-w-[40vw]"}>
