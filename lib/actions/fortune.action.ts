@@ -71,37 +71,51 @@ export const getDoOrDontResult = async ({
   }
 };
 
-// export const getChoicesResult = async ({
-//   cardNames = ["", ""],
-//   context = "",
-// }: {
-//   cardNames: string[];
-//   context: string;
-// }) => {
-//   try {
-//     if (!context || !cardNames[0] || !cardNames[1] || !cardNames[2]) {
-//       throw new Error("Invalid parameters");
-//     }
+export const getChoicesResult = async ({
+  cardNames = [],
+  context = "",
+  options = [],
+}: {
+  cardNames: string[];
+  context: string;
+  options: (string | null)[];
+}) => {
+  try {
+    if (!context || !cardNames[0] || !cardNames[1] || !cardNames[2]) {
+      throw new Error("Invalid parameters");
+    }
 
-//     const result = await openAi.chat.completions.create({
-//       model: "gpt-4",
-//       messages: [
-//         {
-//           role: "system",
-//           content:
-//             "You are a tarot reader. Provide a detailed reading based on the provided context and the two tarot cards.",
-//         },
-//         { role: "user", content: `Context: ${context}` },
-//         {
-//           role: "user",
-//           content: `If you do this thing, the card is: ${cardNames[0]}. If you don't do this thing, the card is: ${cardNames[1]}.`,
-//         },
-//       ],
-//     });
+    console.log("직전에 들어온 옵션들: ", options);
+    console.log(
+      !options[2]
+        ? `You are considering two options. If you choose '${options[0]}', the card is: ${cardNames[0]}. If you choose '${options[1]}', the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}`
+        : `You are considering three options. If you choose '${options[0]}', the card is: ${cardNames[0]}. If you choose '${options[1]}', the card is: ${cardNames[1]}. If you choose '${options[2]}', the card is: ${cardNames[2]}. To help you make the right decision, the advice card is: ${cardNames[3]}`
+    );
 
-//     //return result.choices[0].message.content
-//     return "무조건 1번입니다 선생님 가시죠 선생님";
-//   } catch (error: any) {
-//     handleError(error, "Failed to get Do or Don't");
-//   }
-// };
+    const result = await openAi.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a tarot reader. Provide a detailed reading based on the provided context and the cards associated with each option.",
+        },
+        {
+          role: "user",
+          content: `Context: ${context}`,
+        },
+        {
+          role: "user",
+          content: !options[2]
+            ? `You are considering two options. If you choose '${options[0]}', the card is: ${cardNames[0]}. If you choose '${options[1]}', the card is: ${cardNames[1]}. To help you make the right decision, the advice card is: ${cardNames[2]}`
+            : `You are considering three options. If you choose '${options[0]}', the card is: ${cardNames[0]}. If you choose '${options[1]}', the card is: ${cardNames[1]}. If you choose '${options[2]}', the card is: ${cardNames[2]}. To help you make the right decision, the advice card is: ${cardNames[3]}`,
+        },
+      ],
+    });
+
+    return result.choices[0].message.content;
+    //return "무조건 1번입니다 선생님 가시죠 선생님";
+  } catch (error: any) {
+    handleError(error, "Failed to get Do or Don't");
+  }
+};

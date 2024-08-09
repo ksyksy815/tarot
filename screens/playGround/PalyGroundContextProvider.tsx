@@ -8,9 +8,11 @@ type PlayGroundContextType = {
   step: "INIT" | "SELECT_CARDS" | "SHOW_RESULT";
   type: "todaysFortune" | "doOrDont" | "choices";
   min: 1 | 2;
-  max: 1 | 2 | 3;
+  max: 1 | 2 | 3 | 4;
   selectedCards: TarotCard[];
   context: string;
+  options: (string | null)[];
+  updateOptions: (newOptions: (string | null)[]) => void;
   updateContext: (newContext: string) => void;
   updateStep: (newStep: PlayGroundContextType["step"]) => void;
   updateSelectedCards: (newCard: TarotCard) => void;
@@ -27,6 +29,8 @@ export const PlayGroundContext = createContext<PlayGroundContextType>({
   max: 1,
   selectedCards: [],
   context: "",
+  options: [],
+  updateOptions: () => {},
   updateContext: () => {},
   updateStep: () => {},
   updateSelectedCards: () => {},
@@ -49,6 +53,7 @@ const PlayGroundContextProvider = ({
   const [selectedCards, setSelectedCards] = useState<TarotCard[]>([]);
 
   const [context, setContext] = useState<string>("");
+  const [options, setOptions] = useState<(string | null)[]>([null, null, null]);
 
   const min = () => {
     switch (type) {
@@ -70,7 +75,7 @@ const PlayGroundContextProvider = ({
       case "doOrDont":
         return 3;
       case "choices":
-        return 3;
+        return 4;
       default:
         return 1;
     }
@@ -97,11 +102,16 @@ const PlayGroundContextProvider = ({
     setContext(newContext);
   };
 
+  const updateOptions = (newOptions: (string | null)[]) => {
+    setOptions(newOptions);
+  };
+
   const handleSubmit = () => {
     fetchFortune({
       type,
       cardNames: selectedCards.map((card) => card.name),
       context,
+      options,
     });
 
     updateStep("SHOW_RESULT");
@@ -116,6 +126,8 @@ const PlayGroundContextProvider = ({
         max: max(),
         selectedCards,
         context,
+        options,
+        updateOptions,
         updateContext,
         updateStep,
         updateSelectedCards,

@@ -13,6 +13,9 @@ const useFetchFortune = () => {
     cardNames: [],
   });
   const [userContext, setUserContext] = useState<string>("");
+  const [optionsForChoices, setOptionsForChoices] = useState<(string | null)[]>(
+    []
+  );
 
   const { data, status } = useQuery({
     queryKey: [QUERY_KEYS.fortune.todaysFortune, params.type, params.cardNames],
@@ -28,10 +31,12 @@ const useFetchFortune = () => {
             context: userContext,
           });
         default:
-          return aiService.getChoices(params.cardNames, userContext);
+          return aiService.getChoices({
+            cardNames: params.cardNames,
+            context: userContext,
+            options: optionsForChoices,
+          });
       }
-
-      return null;
     },
     enabled,
   });
@@ -40,10 +45,12 @@ const useFetchFortune = () => {
     type,
     cardNames,
     context,
+    options,
   }: {
     type: "todaysFortune" | "doOrDont" | "choices";
     cardNames: string[];
     context: string;
+    options: (string | null)[];
   }) => {
     console.log(
       "Client 1. useFetchFortune안의 fetchFortune params: ",
@@ -52,6 +59,10 @@ const useFetchFortune = () => {
     );
     setParams({ type, cardNames });
     setUserContext(context);
+    if (type === "choices") {
+      setOptionsForChoices(options);
+    }
+
     setEnabled(true);
   };
 

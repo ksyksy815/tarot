@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { FormEvent, useContext, useState } from "react";
 import { FaCommentDots } from "react-icons/fa";
-import { PlayGroundContext } from "./PalyGroundContextProvider";
+import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
-const ContextForm = () => {
+const DoOrDontForm = () => {
   const { updateContext } = useContext(PlayGroundContext);
   const [userInput, setUserInput] = useState("");
 
@@ -52,4 +52,4 @@ const ContextForm = () => {
   );
 };
 
-export default ContextForm;
+export default DoOrDontForm;

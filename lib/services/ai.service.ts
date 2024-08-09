@@ -33,7 +33,31 @@ class AiService {
     ).then((res) => res.json());
   };
 
-  getChoices = async (cardNames: string[], context: string) => {};
+  getChoices = async ({
+    cardNames,
+    context,
+    options,
+  }: {
+    cardNames: string[];
+    context: string;
+    options: (string | null)[];
+  }) => {
+    console.log(
+      "client 2. AiService의 getChoices: ",
+      cardNames,
+      context,
+      options
+    );
+
+    return await fetch(
+      `${apiUrls.choices}?cardNames=${cardNames.join(
+        ","
+      )}&context=${context}&options=${options.join(",")}`,
+      {
+        method: "GET",
+      }
+    ).then((res) => res.json());
+  };
 }
 
 const aiService = new AiService();

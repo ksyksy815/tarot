@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import ChoicesResult from "../choices/ChoicesResult";
 import DoOrDontResult from "../do-or-dont/DoOrDontResult";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 import TodaysFortuneResult from "./TodaysFortuneResult";
@@ -14,7 +15,7 @@ const Results = () => {
     return <DoOrDontResult />;
   }
 
-  return <div>Choices results</div>;
+  return <ChoicesResult />;
 };
 
 export default Results;

@@ -1,4 +1,4 @@
-import { getTodaysFortune } from "@/lib/actions/fortune.action";
+import { getChoicesResult } from "@/lib/actions/fortune.action";
 import { handleError } from "@/lib/utils";
 import { NextRequest } from "next/server";
 
@@ -7,16 +7,26 @@ export async function GET({ url }: NextRequest) {
   const params = new URLSearchParams(query);
 
   try {
-    console.log("Server 1. GET todaysFortune params: ", params);
-    const cardName = params.get("cardName");
+    console.log("Server 1. GET Do Or Don't params: ", params);
+    const context = params.get("context") || "";
+    const cardNames = params.get("cardNames");
+    const options = params.get("options");
 
-    if (!cardName) {
+    if (!cardNames) {
       throw new Error("Card is not selected");
     }
 
-    const todaysFortune = await getTodaysFortune(cardName);
+    const cardNamesList = cardNames.split(",");
 
-    return new Response(JSON.stringify(todaysFortune));
+    console.log("route에 들어온 options: ", options);
+
+    const doOrDontResult = await getChoicesResult({
+      cardNames: cardNamesList,
+      context,
+      options: options ? options?.split(",") : [],
+    });
+
+    return new Response(JSON.stringify(doOrDontResult));
   } catch (error: any) {
     handleError(error, "Failed to get Today's Fortune");
   }

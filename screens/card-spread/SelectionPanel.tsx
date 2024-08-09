@@ -2,13 +2,21 @@ import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useContext, useRef } from "react";
+import ChoicesSelectionHelper from "../choices/ChoicesSelectionHelper";
 import SelectionHelper from "../do-or-dont/SelectionHelper";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
 const SelectionPanel = () => {
   const panelRef = useRef<HTMLElement>(null);
-  const { selectedCards, handleSubmit, type, min, max, resetSelection } =
-    useContext(PlayGroundContext);
+  const {
+    selectedCards,
+    handleSubmit,
+    type,
+    min,
+    max,
+    resetSelection,
+    options,
+  } = useContext(PlayGroundContext);
 
   useGSAP(() => {
     gsap.from(panelRef.current, {
@@ -22,13 +30,15 @@ const SelectionPanel = () => {
   return (
     <section
       ref={panelRef}
-      className={`fixed bottom-0 left-0 bg-indigo-950/50 backdrop-blur-md w-full text-white p-5 flex flex-col justify-between gap-y-10`}
+      className={`fixed bottom-0 left-0 bg-blue-950/50 backdrop-blur-md w-full text-white p-5 flex flex-col justify-between gap-y-10`}
     >
       {type === "todaysFortune" && (
         <span>{`Number of selected cards: ${selectedCards.length}`}</span>
       )}
 
       {type === "doOrDont" && <SelectionHelper />}
+
+      {type === "choices" && <ChoicesSelectionHelper />}
 
       <div className={"w-full flex items-center justify-end gap-x-2"}>
         <Button
@@ -40,7 +50,9 @@ const SelectionPanel = () => {
         </Button>
         <Button
           onClick={() => handleSubmit()}
-          disabled={selectedCards.length < max}
+          disabled={
+            !options[2] ? selectedCards.length < 3 : selectedCards.length < max
+          }
         >
           See Result
         </Button>
