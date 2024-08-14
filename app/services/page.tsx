@@ -43,7 +43,7 @@ const Page = () => {
       <ServiceHero />
 
       <section
-        className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] xl:px-0`}
+        className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] xl:px-0 text-aicana-dawn`}
       >
         <h1 className={`text-5xl font-bold`}>{`Our Tarot Reading Services`}</h1>
         <p

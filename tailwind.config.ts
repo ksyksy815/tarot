@@ -24,6 +24,12 @@ const config = {
     },
     extend: {
       colors: {
+        aicana: {
+          dawn: "#DBD8E3",
+          twilight: "#5C5470",
+          dusk: "#352F44",
+          midnight: "#2A2438",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

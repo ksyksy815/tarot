@@ -9,7 +9,7 @@ type Props = {
 const SelectSpread = ({ title = "", description = "", url = "" }: Props) => {
   return (
     <div
-      className={`h-[424px] flex-1 xl:w-[375px] flex flex-col justify-between gap-y-10 shadow-card-default py-10 px-5 rounded-lg`}
+      className={`h-[424px] flex-1 xl:w-[375px] flex flex-col justify-between gap-y-10 py-10 px-5 rounded-lg bg-aicana-dawn text-aicana-midnight`}
     >
       <div className={"flex flex-col gap-y-3"}>
         <h3 className={`text-3xl font-bold`}>{title}</h3>

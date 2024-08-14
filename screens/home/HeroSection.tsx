@@ -46,7 +46,7 @@ const HeroSection = () => {
         </p>
 
         <Link href={"/services"}>
-          <Button variant={"secondary"} className={"self-start"}>
+          <Button variant={"outline"} className={"self-start"}>
             Get Your Reading Now
           </Button>
         </Link>

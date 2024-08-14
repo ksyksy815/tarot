@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll ${robotoMono.className}  bg-[#ecf0f3] text-black`}
+        className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll ${robotoMono.className}  bg-aicana-midnight text-aicana-dawn`}
       >
         <Providers>
           <TopHeader />

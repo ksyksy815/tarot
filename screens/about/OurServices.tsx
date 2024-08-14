@@ -5,7 +5,7 @@ import Link from "next/link";
 const OurServices = () => {
   return (
     <section
-      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] xl:px-0`}
+      className={`w-full flex flex-col gap-y-5 text-aicana-dawn md:gap-y-8 px-[20px] xl:px-0`}
     >
       <h2 className={"text-4xl font-bold"}>
         {ABOUT.ourTarotReadingServices.title}
@@ -19,7 +19,7 @@ const OurServices = () => {
             return (
               <li
                 key={index}
-                className={`h-[250px] w-full flex flex-col justify-between flex-1 shadow-card-default rounded-lg p-5 hover:translate-y-[-5px] gap-y-5`}
+                className={`h-[250px] w-full flex flex-col justify-between flex-1 rounded-lg p-5 bg-aicana-dawn text-aicana-midnight hover:translate-y-[-5px] gap-y-5`}
               >
                 <div className={`flex flex-col gapy-y-3`}>
                   <h3 className={`font-semibold text-xl`}>{item.subtitle}</h3>

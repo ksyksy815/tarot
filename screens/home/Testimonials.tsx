@@ -4,7 +4,7 @@ import { TESTINONIALS } from "@/constants/testimonials";
 const Testimonials = () => {
   return (
     <section
-      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] py-[60px] xl:px-0`}
+      className={`w-full flex flex-col gap-y-5 md:gap-y-8 px-[20px] py-[60px] xl:px-0 text-aicana-dawn`}
     >
       <h2 className={"text-3xl font-bold"}>What Out Clients Say</h2>
       <p>
@@ -12,7 +12,7 @@ const Testimonials = () => {
         with AICana.
       </p>
 
-      <div className={"bg-slate-200 py-10"}>
+      <div className={"bg-aicana-twilight py-10"}>
         <InfiniteMovingCards
           items={TESTINONIALS}
           direction="right"

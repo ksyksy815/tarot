@@ -5,7 +5,9 @@ const WhyChoose = () => {
     <section
       className={`w-full flex flex-col gap-y-10 px-[20px] pb-[60px] xl:px-0`}
     >
-      <h2 className={"text-4xl font-bold"}>{ABOUT.whyChooseAIcana.title}</h2>
+      <h2 className={"text-aicana-dawn text-4xl font-bold"}>
+        {ABOUT.whyChooseAIcana.title}
+      </h2>
       <ul
         className={
           "flex flex-col items-start w-full gap-6 md:flex-row md:flex-wrap"
@@ -15,12 +17,14 @@ const WhyChoose = () => {
           return (
             <li
               key={index}
-              className={
-                "flex flex-col items-center justify-center gap-y-6 border p-6 rounded-lg shadow-card-default md:min-h-[320px] md:flex-1"
-              }
+              className={`flex flex-col items-center justify-center gap-y-6 p-6 rounded-lg ${
+                index % 2 === 0
+                  ? "bg-aicana-dawn text-aicana-midnight"
+                  : "bg-aicana-twilight text-aicana-dawn"
+              } md:min-h-[320px] md:flex-1 hover:translate-y-[-4px]`}
             >
               <div className={"w-full flex items-center gap-4"}>
-                <div className="h-12 w-12 min-w-12 grid place-content-center rounded-full bg-black">
+                <div className="h-12 w-12 min-w-12 grid place-content-center rounded-full bg-aicana-midnight">
                   {item.icon ? item.icon() : <></>}
                 </div>
 

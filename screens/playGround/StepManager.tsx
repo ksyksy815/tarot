@@ -21,6 +21,7 @@ const StepManager = () => {
         <p className={"text-lg"}>{SPREAD_TYPES[type].description || "-"}</p>
 
         <Button
+          variant={"secondary"}
           onClick={() => {
             shuffleCards();
             updateStep("SELECT_CARDS");

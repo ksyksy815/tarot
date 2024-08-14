@@ -30,7 +30,7 @@ const SelectionPanel = () => {
   return (
     <section
       ref={panelRef}
-      className={`fixed bottom-0 left-0 bg-blue-950/50 backdrop-blur-md w-full text-white p-5 flex flex-col justify-between gap-y-10`}
+      className={`fixed bottom-0 left-0 bg-aicana-midnight/50 backdrop-blur-md w-full text-aicana-dawn p-5 flex flex-col justify-between gap-y-10`}
     >
       {type === "todaysFortune" && (
         <span>{`Number of selected cards: ${selectedCards.length}`}</span>

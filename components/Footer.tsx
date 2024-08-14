@@ -3,7 +3,11 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className={"flex justify-center bg-slate-200 p-10 w-full"}>
+    <footer
+      className={
+        "flex justify-center bg-aicana-dusk p-10 w-full text-aicana-dawn"
+      }
+    >
       <div className={"flex flex-col items-start max-w-screen-xl w-full "}>
         <div className={`flex flex-col w-full gap-y-10`}>
           <div className={`flex flex-col gap-10`}>
@@ -18,7 +22,11 @@ const Footer = () => {
 
             <div className={"flex flex-col gap-2"}>
               <h3 className={"font-bold"}>Quick Links</h3>
-              <ul className={"flex flex-col lg:flex-row lg:gap-x-10 gap-y-2"}>
+              <ul
+                className={
+                  "flex flex-col lg:flex-row lg:gap-x-10 gap-y-2 hover:font-semibold"
+                }
+              >
                 <Link href="/home">Home</Link>
                 <Link href="/services">Services</Link>
                 <Link href="/about">About Us</Link>
@@ -26,9 +34,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className={"text-slate-800"}>
-            &copy; 2024 AICana. All rights reserved.
-          </p>
+          <p>&copy; 2024 AICana. All rights reserved.</p>
         </div>
       </div>
     </footer>
