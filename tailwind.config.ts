@@ -152,7 +152,11 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+    require("tailwind-scrollbar-hide"),
+  ],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

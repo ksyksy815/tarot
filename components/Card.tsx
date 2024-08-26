@@ -6,9 +6,10 @@ import { useContext, useEffect, useState } from "react";
 
 type Props = {
   card: TarotCard;
+  index: number;
 };
 
-const Card = ({ card }: Props) => {
+const Card = ({ card, index }: Props) => {
   const { selectedCards, updateSelectedCards, max } =
     useContext(PlayGroundContext);
   const [showAlert, setShowAlert] = useState(false);
@@ -25,11 +26,14 @@ const Card = ({ card }: Props) => {
     }
   }, [showAlert]);
 
+  const leftPosition = `left-[${15 * index}px]`;
+
   return (
     <div
-      className={`relative h-[100px] w-[60px] md:h-[250px] md:w-[150px] cursor-pointer transition-all duration-300 hover:glow hover:translate-y-[-5px] rounded-lg overflow-hidden shadow-sm shadow-slate-900 ${
-        isSelected ? "translate-y-[-5px] " : ""
+      className={`absolute ${leftPosition} h-[100px] min-w-[60px] w-[60px] md:h-[250px] md:w-[150px] md:min-w-[150px] cursor-pointer transition-all duration-300 hover:glow hover:translate-y-[-5px] rounded-lg overflow-hidden shadow-sm shadow-slate-900 ${
+        isSelected ? "translate-y-[-30px] " : ""
       }`}
+      style={{ left: `${15 * index}px` }}
       onClick={() => {
         if (selectedCards.length === max && !isSelected) {
           setShowAlert(true);
@@ -39,7 +43,7 @@ const Card = ({ card }: Props) => {
       }}
     >
       <Image
-        src={"/images/tarot-back-sample.jpg"}
+        src={"/images/tarot-back1.png"}
         fill={true}
         alt={"back of tarot card"}
       />

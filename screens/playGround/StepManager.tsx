@@ -37,7 +37,14 @@ const StepManager = () => {
 
   if (step === "SELECT_CARDS") {
     if (type === "todaysFortune") {
-      return <SelectCards shuffledCards={shuffledCards} />;
+      return (
+        <div className={"flex flex-col w-full gap-4"}>
+          <p>
+            Choose one card from the spread below to reveal today’s fortune.
+          </p>
+          <SelectCards shuffledCards={shuffledCards} />
+        </div>
+      );
     }
 
     if (type === "doOrDont") {

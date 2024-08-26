@@ -27,10 +27,12 @@ const SelectionPanel = () => {
     });
   });
 
+  console.log(options[2]);
+
   return (
     <section
       ref={panelRef}
-      className={`fixed bottom-0 left-0 bg-aicana-midnight/50 backdrop-blur-md w-full text-aicana-dawn p-5 flex flex-col justify-between gap-y-10`}
+      className={`fixed bottom-0 left-0 bg-aicana-twilight/50 backdrop-blur-md w-full text-aicana-dawn p-5 flex flex-col justify-between gap-y-10`}
     >
       {type === "todaysFortune" && (
         <span>{`Number of selected cards: ${selectedCards.length}`}</span>
@@ -50,9 +52,7 @@ const SelectionPanel = () => {
         </Button>
         <Button
           onClick={() => handleSubmit()}
-          disabled={
-            !options[2] ? selectedCards.length < 3 : selectedCards.length < max
-          }
+          disabled={selectedCards.length < max}
         >
           See Result
         </Button>
