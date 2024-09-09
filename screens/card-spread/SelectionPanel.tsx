@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useContext, useRef } from "react";
-import ChoicesSelectionHelper from "../choices/ChoicesSelectionHelper";
+
 import SelectionHelper from "../do-or-dont/SelectionHelper";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
@@ -30,8 +30,6 @@ const SelectionPanel = () => {
       )}
 
       {type === "doOrDont" && <SelectionHelper />}
-
-      {type === "choices" && <ChoicesSelectionHelper />}
 
       <div className={"w-full flex items-center justify-end gap-x-2"}>
         <Button

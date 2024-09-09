@@ -6,7 +6,7 @@ import { createContext, useState } from "react";
 
 type PlayGroundContextType = {
   step: "INIT" | "SELECT_CARDS" | "SHOW_RESULT";
-  type: "todaysFortune" | "doOrDont" | "choices";
+  type: "todaysFortune" | "doOrDont";
   min: 1 | 2;
   max: 1 | 2 | 3 | 4;
   selectedCards: TarotCard[];
@@ -61,8 +61,7 @@ const PlayGroundContextProvider = ({
         return 1;
       case "doOrDont":
         return 2;
-      case "choices":
-        return 2;
+
       default:
         return 1;
     }
@@ -74,8 +73,7 @@ const PlayGroundContextProvider = ({
         return 1;
       case "doOrDont":
         return 3;
-      case "choices":
-        return 4;
+
       default:
         return 1;
     }

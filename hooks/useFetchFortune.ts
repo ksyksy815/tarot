@@ -6,7 +6,7 @@ import { useState } from "react";
 const useFetchFortune = () => {
   const [enabled, setEnabled] = useState(false);
   const [params, setParams] = useState<{
-    type: "todaysFortune" | "doOrDont" | "choices";
+    type: "todaysFortune" | "doOrDont";
     cardNames: string[];
   }>({
     type: "todaysFortune",
@@ -47,7 +47,7 @@ const useFetchFortune = () => {
     context,
     options,
   }: {
-    type: "todaysFortune" | "doOrDont" | "choices";
+    type: "todaysFortune" | "doOrDont";
     cardNames: string[];
     context: string;
     options: (string | null)[];
@@ -59,9 +59,6 @@ const useFetchFortune = () => {
     );
     setParams({ type, cardNames });
     setUserContext(context);
-    if (type === "choices") {
-      setOptionsForChoices(options);
-    }
 
     setEnabled(true);
   };

@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { SPREAD_TYPES } from "@/constants/servicesIntro";
 import useShuffledCards from "@/hooks/useShuffledCards";
 import { useContext } from "react";
-import ChoicesForm from "../choices/ChoicesForm";
 import DoOrDontForm from "../do-or-dont/DoOrDontForm";
 import Results from "../results/Results";
 import SelectCards from "../todays-fortune/SelectCards";
@@ -46,7 +45,6 @@ const StepManager = () => {
           className={
             "z-20 text-2xl border text-white border-white self-start py-1 px-10 rounded-lg bg-white/10 hover:bg-white/20"
           }
-          disabled={type === "choices"}
         >
           {type === "todaysFortune" ? "Select Cards" : "Start"}
         </Button>
@@ -59,18 +57,9 @@ const StepManager = () => {
       return <SelectCards shuffledCards={shuffledCards} />;
     }
 
-    if (type === "doOrDont") {
-      return (
-        <section className={"w-full px-[20px] xl:px-0 flex flex-col gap-y-10"}>
-          <DoOrDontForm />
-          {context && <SelectCards shuffledCards={shuffledCards} />}
-        </section>
-      );
-    }
-
     return (
       <section className={"w-full px-[20px] xl:px-0 flex flex-col gap-y-10"}>
-        <ChoicesForm />
+        <DoOrDontForm />
         {context && <SelectCards shuffledCards={shuffledCards} />}
       </section>
     );

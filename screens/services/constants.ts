@@ -13,10 +13,4 @@ export const SERVICES = [
     description: `Facing a significant decision? Our "Do or Don't" tarot reading provides clear guidance on whether to take action or hold back. Understand the potential outcomes and make informed decisions with greater assurance.`,
     slug: URLS.services.doOrDont,
   },
-  {
-    spreadType: "choices",
-    title: "Choices",
-    description: `Considering multiple options? The "Choices" tarot reading explores each path's potential outcomes, helping you understand the implications of each choice. Make confident and informed decisions that align with your goals and values.`,
-    slug: URLS.services.choices,
-  },
 ];
