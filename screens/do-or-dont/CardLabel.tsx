@@ -30,7 +30,7 @@ const CardLabel = ({ cardName = "", keywords = [] }: Props) => {
         }
       >
         {keywords.map((keyword) => (
-          <li key={keyword} className={"text-slate-600 text-sm"}>
+          <li key={keyword} className={"text-sm"}>
             {`#${keyword}`}
           </li>
         ))}

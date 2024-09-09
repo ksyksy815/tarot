@@ -16,7 +16,7 @@ const SelectCards = ({ shuffledCards = [] }: Props) => {
   const { selectedCards, resetSelection } = useContext(PlayGroundContext);
 
   return (
-    <div className={`relativew w-full flex flex-col items-start`}>
+    <div className={`relativew w-full flex items-start`}>
       <CardDeck shuffledCards={shuffledCards} />
 
       <SelectionPanel />

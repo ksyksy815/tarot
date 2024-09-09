@@ -49,7 +49,7 @@ const MainPage = () => {
       >
         <button
           className={
-            "w-[135px] h-[135px] md:w-[160px] md:h-[160px] bg-white/20 p-5 rounded-full border border-white hover:translate-y-[-12px] transition-transform ease-in-out"
+            "z-[50] w-[135px] h-[135px] md:w-[160px] md:h-[160px] bg-white/20 p-5 rounded-full border border-white hover:translate-y-[-12px] transition-transform ease-in-out"
           }
           onClick={() => router.push(URLS.services.todaysFortune)}
         >{`Today's Luck`}</button>

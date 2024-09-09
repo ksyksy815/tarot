@@ -8,7 +8,7 @@ const MobileNav = () => {
       <SheetTrigger className={"block md:hidden"}>
         <RiMenu3Line size={24} />
       </SheetTrigger>
-      <SheetContent className={"bg-aicana-dawn text-aicana-midnight"}>
+      <SheetContent className={"bg-white text-black"}>
         <nav className={`mt-10 flex flex-col items-start text-left gap-5`}>
           <NavItems />
         </nav>

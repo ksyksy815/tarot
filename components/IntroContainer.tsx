@@ -11,40 +11,30 @@ type Props = {
 
 const IntroContainer = ({ type }: Props) => {
   return (
-    <div className={`w-full flex flex-col gap-y-20`}>
-      <section
-        className={"relative h-[640px] w-full"}
-        style={{ maxHeight: `calc(100vh - 80px)` }}
+    <div className={"h-[100svh] w-full relative"}>
+      <Image
+        src={"/images/todays-fortune.png"}
+        fill={true}
+        alt={"duck master"}
+        className={"object-right-bottom object-cover aspect-auto"}
+      />
+
+      <div
+        className={`w-full flex flex-col gap-y-5 text-white absolute top-[20vh] lg:top-[15vh]`}
       >
-        <Image
-          src={SPREAD_TYPES[type].imageUrl}
-          fill={true}
-          alt={"About"}
-          className={"w-full object-cover"}
-        />
+        <section className={"w-full"}>
+          <PlayGround type={type} />
+        </section>
+      </div>
 
-        <div
-          className={`absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-black/50`}
-        />
-
-        <h1
-          className={
-            "absolute left-0 bottom-0 text-5xl font-serif text-white font-bold border-l-4 px-6 ml-[5vw] mb-[10vw]"
-          }
-        >
-          {SPREAD_TYPES[type].title || "-"}
-        </h1>
-        <SparklesCore
-          background="transparent"
-          minSize={0.2}
-          maxSize={1}
-          particleDensity={20}
-          className={`w-full h-full`}
-          particleColor="#FFFFFF"
-        />
-      </section>
-
-      <PlayGround type={type} />
+      <SparklesCore
+        background="transparent"
+        minSize={0.2}
+        maxSize={1}
+        particleDensity={20}
+        className={`w-full h-[20%] max-h-[30vh]`}
+        particleColor="#FFFFFF"
+      />
     </div>
   );
 };

@@ -23,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll ${playfairDisplay.className}`}
+        className={`relative flex flex-col items-center w-screen h-screen overflow-y-scroll bg-[#201D1C] bg-grid-yellow-300/10 ${playfairDisplay.className}`}
       >
         <Providers>
           <TopHeader />
-          <div className={`w-full flex-1 max-w-screen-xl`}>{children}</div>
+          <div className={`absolute top-0 w-full flex-1 max-w-screen-xl`}>
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

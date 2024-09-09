@@ -1,6 +1,4 @@
 import Logo from "./Logo";
-import MobileNav from "./nav/MobileNav";
-import PCNav from "./nav/PCNav";
 
 const TopHeader = () => {
   return (
@@ -12,8 +10,8 @@ const TopHeader = () => {
       >
         <Logo />
 
-        <MobileNav />
-        <PCNav />
+        {/* <MobileNav />
+        <PCNav /> */}
       </div>
     </header>
   );

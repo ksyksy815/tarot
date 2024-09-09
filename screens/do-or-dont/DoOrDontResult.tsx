@@ -30,7 +30,7 @@ const DoOrDontResult = () => {
   return (
     <div
       ref={resultPageRef}
-      className={`flex flex-col items-center gap-10 xl:px-0`}
+      className={`flex flex-col items-center gap-10 bg-[#201D1C]/80 backdrop-blur-sm p-5 text-white`}
     >
       <section
         className={`w-full flex flex-col px-[20px] md:flex-row xl:px-0 gap-5`}
@@ -44,7 +44,7 @@ const DoOrDontResult = () => {
 
       <section
         className={
-          "flex items-center w-full bg-slate-200 flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 px-10 rounded-lg"
+          "flex items-center w-full flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 px-10 rounded-lg"
         }
       >
         {selectedCards?.map((card, index) => (
@@ -53,9 +53,7 @@ const DoOrDontResult = () => {
             className={`card-${index}, relative flex flex-col items-center lg:items-start justifd-start w-full`}
           >
             <h2
-              className={
-                "mb-2 font-serif italic font-bold text-5xl text-slate-800"
-              }
+              className={"mb-2 font-serif italic font-bold text-5xl"}
             >{`Card ${index + 1}`}</h2>
             <CardResult
               imageUrl={card.image}

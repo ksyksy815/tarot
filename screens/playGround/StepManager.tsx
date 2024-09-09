@@ -17,8 +17,25 @@ const StepManager = () => {
 
   if (step === "INIT") {
     return (
-      <section className={"w-full flex flex-col gap-10 px-[20px] xl:px-0"}>
-        <p className={"text-lg"}>{SPREAD_TYPES[type].description || "-"}</p>
+      <section className={"w-full flex flex-col gap-10 px-[20px] text-white"}>
+        <h1
+          className={
+            "text-4xl lg:text-5xl font-serif font-bold border-l-4 px-6"
+          }
+        >
+          {SPREAD_TYPES[type].title || "-"}
+        </h1>
+
+        <div className={"flex flex-col gap-y-10 md:gap-y-15 lg:gap-y-20"}>
+          {SPREAD_TYPES[type].description.map((text, index) => (
+            <p
+              key={index}
+              className={`max-w-[80%] text-3xl md:max-w-[65%] leading-[40px] lg:max-w-[50%] lg:text-4xl lg:leading-[50px]`}
+            >
+              {text}
+            </p>
+          ))}
+        </div>
 
         <Button
           variant={"secondary"}
@@ -26,7 +43,9 @@ const StepManager = () => {
             shuffleCards();
             updateStep("SELECT_CARDS");
           }}
-          className={"self-center text-lg px-5"}
+          className={
+            "z-20 text-2xl border text-white border-white self-start py-1 px-10 rounded-lg bg-white/10 hover:bg-white/20"
+          }
           disabled={type === "choices"}
         >
           {type === "todaysFortune" ? "Select Cards" : "Start"}
@@ -37,14 +56,7 @@ const StepManager = () => {
 
   if (step === "SELECT_CARDS") {
     if (type === "todaysFortune") {
-      return (
-        <div className={"flex flex-col w-full gap-4"}>
-          <p>
-            Choose one card from the spread below to reveal today’s fortune.
-          </p>
-          <SelectCards shuffledCards={shuffledCards} />
-        </div>
-      );
+      return <SelectCards shuffledCards={shuffledCards} />;
     }
 
     if (type === "doOrDont") {

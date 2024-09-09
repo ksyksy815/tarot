@@ -7,10 +7,15 @@ type Props = {
 
 const SpreadCards = ({ shuffledCards = [] }: Props) => {
   return (
-    <div className={"w-full flex-1 py-5 pl-5 md:py-10 md:pl-10 "}>
+    <div
+      className={
+        "flex flex-col gap-y-2 w-full flex-1 py-5 pl-5 md:py-10 md:pl-10 "
+      }
+    >
+      <div className={"self-end"}>Scroll cards</div>
       <div
         className={
-          "relative h-[35vh] flex items-center w-full overflow-x-scroll scrollbar-hide"
+          "relative h-[35vh] flex items-start w-full overflow-x-scroll scrollbar-hide"
         }
       >
         {shuffledCards.map((card, index) => {

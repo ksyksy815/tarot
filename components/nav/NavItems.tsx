@@ -8,7 +8,9 @@ const NavItems = () => {
         <Link
           key={index}
           href={item.href}
-          className={"w-full hover:bg-violet-300 hover:text-white px-5"}
+          className={
+            "w-full hover:bg-yellow-300 hover:text-black px-5 rounded-lg"
+          }
         >
           {item.label}
         </Link>
