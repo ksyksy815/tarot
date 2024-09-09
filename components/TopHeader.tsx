@@ -5,10 +5,10 @@ import PCNav from "./nav/PCNav";
 const TopHeader = () => {
   return (
     <header
-      className={`flex items-center justify-center sticky w-full top-0 bg-aicana-twilight/90 backdrop-blur-sm shadow-sm z-20 text-white`}
+      className={`flex items-center justify-center absolute w-full top-0 bg-transparent z-20 text-white`}
     >
       <div
-        className={`h-[80px] w-full flex items-center justify-between max-w-screen-xl px-5 xl:px-0`}
+        className={`h-[80px] w-full flex items-center justify-between max-w-screen-xl px-5`}
       >
         <Logo />
 

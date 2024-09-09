@@ -67,7 +67,7 @@ const CardResult = ({
 
         <Image
           ref={backsideRef}
-          src={"/images/tarot-back-sample.jpg"}
+          src={"/images/tarot-back.png"}
           fill={true}
           alt={"tarot-back"}
           className={"cursor-pointer"}

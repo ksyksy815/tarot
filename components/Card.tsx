@@ -43,7 +43,7 @@ const Card = ({ card, index }: Props) => {
       }}
     >
       <Image
-        src={"/images/tarot-back1.png"}
+        src={"/images/tarot-back.png"}
         fill={true}
         alt={"back of tarot card"}
       />
