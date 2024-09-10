@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import usePDFGenerator from "@/hooks/usePDFGenerator";
 import { renderMarkdown } from "@/lib/utils";
 import router from "next/router";
 import { useContext, useRef } from "react";
 import CardResult from "../do-or-dont/CardResult";
 
+import TextSkeleton from "@/components/TextSkeleton";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 
 const TodaysFortuneResult = () => {
@@ -35,7 +35,7 @@ const TodaysFortuneResult = () => {
       ))}
 
       <section className={`w-full flex flex-col gap-y-10`}>
-        {isLoading && <Skeleton className="w-[100px] h-[20px] rounded-full" />}
+        {isLoading && <TextSkeleton />}
         {results && (
           <div
             className={`flex flex-col w-full gap-y-10 md:gap-y-10`}

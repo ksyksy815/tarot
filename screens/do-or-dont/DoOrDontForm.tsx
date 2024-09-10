@@ -14,7 +14,10 @@ const DoOrDontForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={"flex flex-col gap-y-6"}>
+    <form
+      onSubmit={handleSubmit}
+      className={"flex flex-col gap-y-6 bg-black/30 p-5 backdrop-blur-sm"}
+    >
       <div className={"flex flex-col md:flex-row md:items-center gap-4"}>
         <FaCommentDots size={48} />
 
@@ -24,7 +27,7 @@ const DoOrDontForm = () => {
           >{`What situation or choice do you need clarity and guidance on? Describe any relevant background information.`}</p>
 
           <p
-            className={"text-gray-500 italic text-sm"}
+            className={"text-white/90 italic text-sm"}
           >{`An example of a good question could be: ‘Should I proceed with this or not?`}</p>
         </div>
       </div>

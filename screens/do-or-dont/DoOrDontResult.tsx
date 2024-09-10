@@ -1,3 +1,4 @@
+import TextSkeleton from "@/components/TextSkeleton";
 import { Button } from "@/components/ui/button";
 import usePDFGenerator from "@/hooks/usePDFGenerator";
 import { renderMarkdown } from "@/lib/utils";
@@ -8,7 +9,6 @@ import { useContext, useRef } from "react";
 import { FaCommentDots } from "react-icons/fa";
 import { PlayGroundContext } from "../playGround/PalyGroundContextProvider";
 import CardResult from "./CardResult";
-import Skeleton from "./Skeleton";
 
 const CARD_REPRESENTATION = ["Do", "Don't", "Advice"];
 
@@ -44,7 +44,7 @@ const DoOrDontResult = () => {
 
       <section
         className={
-          "flex items-center w-full flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 px-10 rounded-lg"
+          "flex items-center w-full flex-col lg:items-start lg:flex-row gap-y-10 gap-x-5 py-10 rounded-lg"
         }
       >
         {selectedCards?.map((card, index) => (
@@ -66,7 +66,7 @@ const DoOrDontResult = () => {
       </section>
 
       <section className={`w-full flex flex-col px-[20px] xl:px-0 gap-20`}>
-        {isLoading && <Skeleton />}
+        {isLoading && <TextSkeleton />}
 
         {results && (
           <div

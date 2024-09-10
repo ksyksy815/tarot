@@ -29,7 +29,7 @@ const StepManager = () => {
           {SPREAD_TYPES[type].description.map((text, index) => (
             <p
               key={index}
-              className={`max-w-[80%] text-3xl md:max-w-[65%] leading-[40px] lg:max-w-[50%] lg:text-4xl lg:leading-[50px]`}
+              className={`max-w-[90%] text-3xl md:max-w-[65%] leading-[40px] lg:max-w-[50%] lg:text-4xl lg:leading-[50px]`}
             >
               {text}
             </p>
@@ -58,7 +58,7 @@ const StepManager = () => {
     }
 
     return (
-      <section className={"w-full px-[20px] xl:px-0 flex flex-col gap-y-10"}>
+      <section className={"w-full xl:px-0 flex flex-col gap-y-10"}>
         <DoOrDontForm />
         {context && <SelectCards shuffledCards={shuffledCards} />}
       </section>

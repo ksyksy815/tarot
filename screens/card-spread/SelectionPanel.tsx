@@ -26,7 +26,9 @@ const SelectionPanel = () => {
       className={`h-[25vh] fixed bottom-0 left-0 bg-[#201D1C]/80 backdrop-blur-md w-full text-aicana-dawn p-5 flex flex-col justify-between gap-y-10`}
     >
       {type === "todaysFortune" && (
-        <span>{`Number of selected cards: ${selectedCards.length}`}</span>
+        <span
+          className={"text-xl"}
+        >{`Number of selected cards: ${selectedCards.length}`}</span>
       )}
 
       {type === "doOrDont" && <SelectionHelper />}
