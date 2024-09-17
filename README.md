@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎴 AICana
 
-## Getting Started
+AICana is an interactive tarot reading service that combines the mystical world of tarot with the power of AI. By leveraging the OpenAI API, AICana provides personalized tarot readings based on the cards you choose, offering insights and guidance tailored to your life's questions.
 
-First, run the development server:
+## 🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🃏 Today's Fortune**: Select one card to receive a general fortune for the day. Let the tarot guide your daily decisions and outlook.
+- **🔮 Do or Don't**: Input your personal context and choose three cards:
+  - **First Card**: Reveals what may happen if you decide to proceed.
+  - **Second Card**: Shows the potential outcome if you choose not to act.
+  - **Third Card**: Offers advice to help you make the best decision.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **💻 Frontend**: React, Next.js, Tailwind CSS
+- **🤖 AI Integration**: OpenAI API
+- **🔙 Backend**: Next.js Server Actions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🌐 Live Site
 
-## Learn More
+Check out the live site at: [AICana](https://aicana.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For any questions or suggestions, please contact [seoyeonkim815@gmail.com](mailto:seoyeonkim815@gmail.com).
