@@ -78,7 +78,7 @@ export const tarotCards: TarotCard[] = [
   {
     name: "Strength",
     type: "Major Arcana",
-    image: "/images/theSstrength.png",
+    image: "/images/theStrength.png",
     index: 8,
     keywords: ["strength", "courage", "persuasion", "influence", "compassion"],
   },
